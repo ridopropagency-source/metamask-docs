@@ -1,11 +1,34 @@
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
 ### Install MetaMask Embedded Wallets SDK
 
-Install the MetaMask Embedded Wallets SDK (Web3Auth) package in your project.
+Install the MetaMask Embedded Wallets SDK (Web3Auth) package in your project. Select the tab that applies:
 
-Additionally, for blockchain calls, we're using `wagmi` for this example.
+<Tabs
+  defaultValue="demo"
+  values={[
+    { label: 'Demo app', value: 'demo' },
+    { label: 'Set up your app', value: 'diy' },
+  ]}>
+  <TabItem value="demo">
+
+Install dependencies from the project root with:
+
+```bash
+npm install
+```
+
+  </TabItem>
+  <TabItem value="diy">
+
+Install the Web3Auth SDK and the package you will use for blockchain calls (this demo uses `wagmi`):
 
 ```bash npm2yarn
 npm install --save @web3auth/modal wagmi @tanstack/react-query
 ```
 
 [![Npm package monthly downloads](https://badgen.net/npm/dm/@web3auth/modal)](https://www.npmjs.com/package/@web3auth/modal) [![](https://data.jsdelivr.com/v1/package/npm/@web3auth/modal/badge)](https://www.jsdelivr.com/package/npm/@web3auth/modal)
+
+  </TabItem>
+</Tabs>

@@ -10,6 +10,14 @@ export default function getSteps(
 ) {
   steps.push(
     {
+      ...STEPS.registerApp,
+      pointer: replacementAggregator.highlightRange(
+        qsFileLinks.EW_REACT_WEB3AUTHCONTEXT_TSX,
+        files[qsFileLinks.EW_REACT_WEB3AUTHCONTEXT_TSX],
+        'Dashboard Registration'
+      ),
+    },
+    {
       ...STEPS.reactQuickStart,
       pointer: replacementAggregator.highlightRange(
         qsFileLinks.EW_REACT_WEB3AUTHCONTEXT_TSX,
@@ -23,14 +31,6 @@ export default function getSteps(
         qsFileLinks.EW_REACT_PACKAGE_JSON,
         files[qsFileLinks.EW_REACT_PACKAGE_JSON],
         'Web3Auth Installation'
-      ),
-    },
-    {
-      ...STEPS.registerApp,
-      pointer: replacementAggregator.highlightRange(
-        qsFileLinks.EW_REACT_WEB3AUTHCONTEXT_TSX,
-        files[qsFileLinks.EW_REACT_WEB3AUTHCONTEXT_TSX],
-        'Dashboard Registration'
       ),
     }
   )

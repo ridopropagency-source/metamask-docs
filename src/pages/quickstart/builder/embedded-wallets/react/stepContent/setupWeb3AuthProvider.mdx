@@ -1,4 +1,38 @@
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
 ### Set up the Web3Auth provider
+
+<Tabs
+  defaultValue="demo"
+  values={[
+    { label: 'Demo app', value: 'demo' },
+    { label: 'Set up your app', value: 'diy' },
+  ]}>
+  <TabItem value="demo">
+
+The demo app already has the Web3Auth provider configured. You are ready to run the application:
+
+```bash
+npm run dev
+```
+
+Congratulations, your demo app is running at `http://localhost:5173`.
+
+:::tip
+
+We recommend using the rest of this wizard to walkthrough how the demo app has been set up.
+
+:::
+
+  </TabItem>
+  <TabItem value="diy">
 
 Wrap your app with the `Web3AuthProvider` to enable hooks across your application. Use the configuration
 from the previous step.
+
+  </TabItem>
+</Tabs>
+
+
+
