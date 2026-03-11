@@ -10,6 +10,14 @@ export default function getSteps(
 ) {
   steps.push(
     {
+      ...STEPS.registerApp,
+      pointer: replacementAggregator.highlightRange(
+        qsFileLinks.EW_NEXTJS_COMPONENTS_PROVIDER_TSX,
+        files[qsFileLinks.EW_NEXTJS_COMPONENTS_PROVIDER_TSX],
+        'Dashboard Registration'
+      ),
+    },
+    {
       ...STEPS.nextjsQuickStart,
       pointer: replacementAggregator.highlightRange(
         qsFileLinks.EW_NEXTJS_LAYOUT_TSX,
@@ -23,14 +31,6 @@ export default function getSteps(
         qsFileLinks.EW_NEXTJS_PACKAGE_JSON,
         files[qsFileLinks.EW_NEXTJS_PACKAGE_JSON],
         'Web3Auth Installation'
-      ),
-    },
-    {
-      ...STEPS.registerApp,
-      pointer: replacementAggregator.highlightRange(
-        qsFileLinks.EW_NEXTJS_COMPONENTS_PROVIDER_TSX,
-        files[qsFileLinks.EW_NEXTJS_COMPONENTS_PROVIDER_TSX],
-        'Dashboard Registration'
       ),
     }
   )
