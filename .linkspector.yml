@@ -34,6 +34,7 @@ ignorePatterns:
 - pattern: 'https://web3onboard.thirdweb.com'
 - pattern: 'https://0xfury.com/privacy'
 - pattern: '^https://docs.arbitrum.io'
+- pattern: '^https://nodefleet.org'
 aliveStatusCodes:
 - 200
 - 206
