@@ -13,13 +13,15 @@ import TabItem from "@theme/TabItem";
 MetaMask Connect packages generally work out of the box with Vite.
 However, some transitive dependencies may reference Node.js globals (`global`, `Buffer`, `process`) that Vite does not provide by default.
 
-## Step 1: Install polyfill packages
+## Steps
+
+### 1. Install polyfill packages
 
 ```bash npm2yarn
 npm install --save-dev buffer process
 ```
 
-## Step 2: Add polyfills to `index.html`
+### 2. Add polyfills to `index.html`
 
 Add a `<script>` tag in the `<head>` of your `index.html` to make `Buffer` and `process` available globally:
 
@@ -43,7 +45,7 @@ Add a `<script>` tag in the `<head>` of your `index.html` to make `Buffer` and `
 </html>
 ```
 
-## Step 3: Update `vite.config.js`
+### 3. Update `vite.config.js`
 
 Define `global` as `globalThis` so libraries that reference `global` work in the browser:
 
@@ -87,6 +89,6 @@ Only add these if you encounter specific build errors referencing those modules.
 
 ## Next steps
 
-- [Troubleshooting overview](index.md)
-- [Get started with EVM](../evm/index.md)
-- [Get started with Solana](../solana/index.md)
+- See the [troubleshooting overview](index.md).
+- [Get started with EVM networks.](../evm/index.md)
+- [Get started with Solana.](../solana/index.md)

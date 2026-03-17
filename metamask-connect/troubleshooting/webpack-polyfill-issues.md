@@ -171,6 +171,6 @@ module.exports = defineConfig({
 
 ## Next steps
 
-- [Troubleshooting overview](index.md)
-- [Get started with EVM](../evm/index.md)
-- [Get started with Solana](../solana/index.md)
+- See the [troubleshooting overview](index.md).
+- [Get started with EVM networks.](../evm/index.md)
+- [Get started with Solana.](../solana/index.md)
