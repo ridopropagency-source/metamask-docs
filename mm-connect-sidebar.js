@@ -51,9 +51,7 @@ const metamaskConnectSidebar = {
       collapsed: true,
       link: { type: 'doc', id: 'troubleshooting/index' },
       items: [
-        'troubleshooting/vite-polyfill-issues',
         'troubleshooting/metro-polyfill-issues',
-        'troubleshooting/webpack-polyfill-issues',
       ],
     },
   ],

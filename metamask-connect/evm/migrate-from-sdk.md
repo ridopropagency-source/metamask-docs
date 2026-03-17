@@ -195,13 +195,10 @@ const txHash = await client.connectWith({
 })
 ```
 
-:::tip Bundler polyfill issues
-If your build fails with errors referencing `Buffer`, `process`, `stream`, `crypto`, or
-`global is not defined`, your bundler likely needs Node.js polyfills configured.
-See the fix for your bundler:
-- [Webpack 5 (CRA, Angular, Vue CLI)](../troubleshooting/webpack-polyfill-issues.md)
-- [Vite](../troubleshooting/vite-polyfill-issues.md)
-- [React Native Metro](../troubleshooting/metro-polyfill-issues.md)
+:::tip React Native polyfills
+Browser-based setups (Vite, Webpack) work without polyfills. If you are migrating a **React Native**
+app and encounter errors referencing `Buffer`, `crypto`, `stream`, or `Event is not defined`, see
+[React Native Metro polyfill issues](../troubleshooting/metro-polyfill-issues.md).
 :::
 
 ## 5. Update provider access
@@ -404,4 +401,4 @@ surface in one environment but not the other.
 - [Manage user accounts](./guides/manage-user-accounts.md)
 - [Send transactions](./guides/send-transactions/index.md)
 - [Production readiness checklist](./guides/best-practices/production-readiness.md)
-- [Troubleshoot polyfill issues](../troubleshooting/index.md)
+- [React Native polyfill troubleshooting](../troubleshooting/metro-polyfill-issues.md)
