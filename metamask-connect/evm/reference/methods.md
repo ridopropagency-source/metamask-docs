@@ -1,6 +1,6 @@
 ---
 title: 'MetaMask Connect EVM Methods Reference'
-description: Complete API reference for MetaMask Connect EVM methods including connect, connectAndSign, connectWith, getProvider, and disconnect.
+description: Complete API reference for MetaMask Connect EVM methods including connect, connectAndSign, connectWith, getProvider, getInfuraRpcUrls, and disconnect.
 keywords:
   [
     evm,
@@ -11,6 +11,7 @@ keywords:
     connectAndSign,
     connectWith,
     getProvider,
+    getInfuraRpcUrls,
     disconnect,
     EIP-1193,
     API reference,
@@ -229,6 +230,37 @@ Non-EVM scopes remain active, so the user stays connected to Solana.
 
 ```javascript
 await evmClient.disconnect()
+```
+
+## `getInfuraRpcUrls`
+
+Generates a map of Infura RPC URLs keyed by hex chain ID.
+Use this utility to populate `api.supportedNetworks` when calling `createEVMClient`.
+
+### Parameters
+
+| Name           | Type       | Required | Description                                                                                             |
+| -------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `infuraApiKey` | `string`   | Yes      | Your Infura API key.                                                                                    |
+| `chainIds`     | `string[]` | No       | Array of hex chain IDs to include (e.g. `['0x1', '0x89']`). If omitted, all supported chains are included. |
+
+### Returns
+
+A `Record<string, string>` mapping hex chain IDs to Infura RPC URLs. When `chainIds` is provided, only matching chains are included.
+
+### Example
+
+```javascript
+import { createEVMClient, getInfuraRpcUrls } from '@metamask/connect-evm'
+
+const evmClient = await createEVMClient({
+  dapp: { name: 'My DApp', url: window.location.href },
+  api: {
+    supportedNetworks: {
+      ...getInfuraRpcUrls({ infuraApiKey: 'YOUR_INFURA_API_KEY', chainIds: ['0x1', '0xaa36a7'] }),
+    },
+  },
+})
 ```
 
 ## Properties

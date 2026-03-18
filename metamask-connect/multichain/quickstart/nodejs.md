@@ -35,7 +35,7 @@ npm install @metamask/connect-multichain
 
 Create a file (for example, `index.mjs`) and initialize the client.
 In Node.js, there is no `window.location`, so you must set `dapp.url` explicitly.
-Use `getInfuraRpcUrls` to generate RPC URLs for all Infura-supported chains:
+Use [`getInfuraRpcUrls`](../reference/methods.md#getinfurarpcurls) to generate RPC URLs for all Infura-supported chains:
 
 ```javascript title="index.mjs"
 import {
@@ -173,7 +173,7 @@ client.on('wallet_sessionChanged', (session) => {
 | [`disconnect()`](../reference/methods.md#disconnect)                       | Disconnects all [scopes](../concepts/scopes.md) and ends the session.                         |
 | [`disconnect(scopes)`](../reference/methods.md#disconnect)                 | Disconnects specific [scopes](../concepts/scopes.md) without ending the session.              |
 | [`on(event, handler)`](../reference/methods.md#on)                         | Registers an event handler.                                                                   |
-| [`getInfuraRpcUrls(apiKey)`](../reference/methods.md#getinfurarpcurls)     | Generates Infura RPC URLs keyed by CAIP-2 chain ID.                                           |
+| [`getInfuraRpcUrls({ infuraApiKey })`](../reference/methods.md#getinfurarpcurls) | Generates Infura RPC URLs keyed by CAIP-2 chain ID.                                           |
 
 ## Full example
 

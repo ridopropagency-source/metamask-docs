@@ -109,7 +109,7 @@ const evmClient = await createEVMClient({
   },
   api: {
     supportedNetworks: {
-      ...getInfuraRpcUrls('YOUR_INFURA_API_KEY'),
+      ...getInfuraRpcUrls({ infuraApiKey: 'YOUR_INFURA_API_KEY' }),
       '0x1': 'https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY',
       '0xaa36a7': 'https://sepolia.infura.io/v3/YOUR_INFURA_API_KEY',
     },
@@ -121,7 +121,7 @@ These examples configure MetaMask Connect EVM with the following options:
 
 - `dapp` - Ensures trust by showing your dapp's `name`, `url`, and `iconUrl` during connection.
 - `api.supportedNetworks` - A map of hex chain IDs to RPC URLs for all networks supported by the app.
-  Use the `getInfuraRpcUrls` helper to generate URLs for all Infura-supported chains, or specify your own.
+  Use the [`getInfuraRpcUrls`](../reference/methods.md#getinfurarpcurls) helper to generate URLs for all Infura-supported chains, or specify your own.
 
 :::info `createEVMClient` is async
 `createEVMClient` returns a promise. Always `await` it before using the client.

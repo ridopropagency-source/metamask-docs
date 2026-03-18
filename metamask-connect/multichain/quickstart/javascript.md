@@ -168,7 +168,7 @@ Use [`invokeMethod()`](../reference/methods.md#invokemethod) to call RPC methods
 | [`disconnect(scopes)`](../reference/methods.md#disconnect)                 | Disconnects specific [scopes](../concepts/scopes.md) without ending the session              |
 | [`on(event, handler)`](../reference/methods.md#on)                         | Registers an event handler                                                                   |
 | [`off(event, handler)`](../reference/methods.md#off)                       | Removes an event handler                                                                     |
-| [`getInfuraRpcUrls(apiKey)`](../reference/methods.md#getinfurarpcurls)     | Generates Infura RPC URLs keyed by CAIP-2 chain ID                                           |
+| [`getInfuraRpcUrls({ infuraApiKey })`](../reference/methods.md#getinfurarpcurls) | Generates Infura RPC URLs keyed by CAIP-2 chain ID                                           |
 
 ## Next steps
 

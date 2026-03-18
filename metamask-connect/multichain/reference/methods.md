@@ -175,13 +175,14 @@ Use this utility to populate `api.supportedNetworks` when calling `createMultich
 
 ### Parameters
 
-| Name           | Type     | Required | Description          |
-| -------------- | -------- | -------- | -------------------- |
-| `infuraApiKey` | `string` | Yes      | Your Infura API key. |
+| Name            | Type       | Required | Description                                                                                                          |
+| --------------- | ---------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| `infuraApiKey`  | `string`   | Yes      | Your Infura API key.                                                                                                 |
+| `caipChainIds`  | `string[]` | No       | Array of [CAIP-2](https://chainagnostic.org/CAIPs/caip-2) chain IDs to include. If omitted, all supported chains are included. |
 
 ### Returns
 
-A `Record<string, string>` mapping CAIP-2 chain IDs to Infura RPC URLs.
+A `Record<string, string>` mapping CAIP-2 chain IDs to Infura RPC URLs. When `caipChainIds` is provided, only matching chains are included.
 
 ### Example
 
@@ -192,7 +193,7 @@ const client = await createMultichainClient({
   dapp: { name: 'My DApp', url: 'https://mydapp.com' },
   api: {
     supportedNetworks: {
-      ...getInfuraRpcUrls('YOUR_INFURA_API_KEY'),
+      ...getInfuraRpcUrls({ infuraApiKey: 'YOUR_INFURA_API_KEY' }),
     },
   },
 })

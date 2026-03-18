@@ -30,7 +30,7 @@ polyfilling in browser or React Native environments.
 npm install @metamask/connect-evm @metamask/connect-multichain
 ```
 
-`@metamask/connect-multichain` provides the `getInfuraRpcUrls` helper for generating RPC URLs.
+`@metamask/connect-multichain` provides the [`getInfuraRpcUrls`](../reference/methods.md#getinfurarpcurls) helper for generating RPC URLs.
 
 ### 2. Initialize the EVM client
 

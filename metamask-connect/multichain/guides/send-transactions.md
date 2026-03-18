@@ -32,7 +32,7 @@ const client = await createMultichainClient({
   },
   api: {
     supportedNetworks: {
-      ...getInfuraRpcUrls('YOUR_INFURA_API_KEY'),
+      ...getInfuraRpcUrls({ infuraApiKey: 'YOUR_INFURA_API_KEY' }),
     },
   },
 })

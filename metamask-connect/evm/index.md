@@ -87,7 +87,7 @@ MetaMask Connect EVM provides an EIP-1193 compatible provider that works with vi
 
 #### Do I need an Infura API key for MetaMask Connect EVM?
 
-An Infura API key is **recommended** for production dapps. MetaMask Connect EVM uses RPC URLs to route read requests and relay connections. Use the `getInfuraRpcUrls` helper to generate URLs for all Infura-supported chains automatically, or provide your own RPC endpoints in the `api.supportedNetworks` configuration.
+An Infura API key is **recommended** for production dapps. MetaMask Connect EVM uses RPC URLs to route read requests and relay connections. Use the [`getInfuraRpcUrls`](./reference/methods.md#getinfurarpcurls) helper to generate URLs for all Infura-supported chains automatically, or provide your own RPC endpoints in the `api.supportedNetworks` configuration.
 
 #### How do I migrate from @metamask/sdk to @metamask/connect-evm?
 

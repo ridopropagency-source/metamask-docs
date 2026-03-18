@@ -100,7 +100,7 @@ recreate it on every render.
 +  },
 +  api: {
 +    supportedNetworks: {
-+      ...getInfuraRpcUrls('YOUR_INFURA_KEY'),
++      ...getInfuraRpcUrls({ infuraApiKey: 'YOUR_INFURA_KEY', chainIds: ['0x1', '0xaa36a7'] }),
 +      '0x89': 'https://polygon-rpc.com',
 +    },
 +  },
@@ -125,7 +125,7 @@ options that MetaMask Connect EVM no longer exposes.
 | `dappMetadata` | `dapp` | Same shape: `{ name, url, iconUrl }` |
 | `dappMetadata.name` | `dapp.name` | Required |
 | `dappMetadata.url` | `dapp.url` | Auto-set in browsers; required in Node.js and React Native |
-| `infuraAPIKey` | `api.supportedNetworks` via `getInfuraRpcUrls(key)` | Helper generates RPC URLs for all Infura-supported chains |
+| `infuraAPIKey` | `api.supportedNetworks` via [`getInfuraRpcUrls({ infuraApiKey })`](./reference/methods.md#getinfurarpcurls) | Helper generates RPC URLs for all Infura-supported chains |
 | `readonlyRPCMap` | `api.supportedNetworks` | Merge into the same object |
 | `headless` | `ui.headless` | Same behavior |
 | `extensionOnly` | `ui.preferExtension` | `true` prefers extension (default); not the same as "only" |
@@ -342,7 +342,7 @@ See the [multichain quickstart](../multichain/quickstart/javascript.md) for a fu
 | `sdk.getProvider()`      | `client.getProvider()`                             | Returns EIP-1193 provider             |
 | `sdk.disconnect()`       | `client.disconnect()`                              | Same, plus partial disconnect support |
 | `dappMetadata`           | `dapp`                                             | Renamed                               |
-| `infuraAPIKey`           | `getInfuraRpcUrls(key)` in `api.supportedNetworks` | Helper function                       |
+| `infuraAPIKey`           | [`getInfuraRpcUrls({ infuraApiKey })`](./reference/methods.md#getinfurarpcurls) in `api.supportedNetworks` | Helper function                       |
 | `readonlyRPCMap`         | `api.supportedNetworks`                            | Merged with Infura URLs               |
 | `headless`               | `ui.headless`                                      | Moved to `ui` namespace               |
 | `extensionOnly`          | `ui.preferExtension`                               | Renamed, slightly different semantics |
@@ -375,7 +375,7 @@ export function EVMProvider({ children }: { children: React.ReactNode }) {
     initialized.current = true
     createEVMClient({
       dapp: { name: 'My DApp', url: window.location.href },
-      api: { supportedNetworks: getInfuraRpcUrls('YOUR_INFURA_API_KEY') },
+      api: { supportedNetworks: getInfuraRpcUrls({ infuraApiKey: 'YOUR_INFURA_API_KEY' }) },
     }).then(setClient)
   }, [])
 
