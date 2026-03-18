@@ -85,7 +85,7 @@ Key differences include:
 - CAIP-25 session management.
 - Improved relay server infrastructure.
 
-See the [migration guide](evm/migrate-from-sdk.md) for step-by-step upgrade instructions.
+See the [migration guide](evm/guides/migrate-from-sdk.md) for step-by-step upgrade instructions.
 
 ### Does MetaMask Connect support mobile?
 

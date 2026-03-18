@@ -5,7 +5,7 @@ sidebar_label: JavaScript
 keywords: [connect, MetaMask, JavaScript, SDK, dapp, Wallet SDK, vanilla javascript, wallet-standard, solana browser dapp, signAndSendTransaction, connect solana]
 ---
 
-# Connect to Solana using MetaMask Connect Solana
+# Connect to Solana quickstart
 
 This quickstart gets you up and running with MetaMask Connect Solana in a JavaScript dapp.
 [Download the template](#set-up-using-a-template) to start quickly, or [set up manually](#set-up-manually) in an existing project.
@@ -112,7 +112,7 @@ const solanaClient = await createSolanaClient({
 ```
 
 :::info
-`createSolanaClient` is async and uses a singleton multichain core under the hood.
+`createSolanaClient` is asynchronous and uses a singleton multichain core under the hood.
 Calling it multiple times returns the same underlying session, so you can safely call it during
 initialization without worrying about duplicate connections.
 :::

@@ -16,7 +16,7 @@ Key enhancements include:
 
 - Asynchronous initialization.
 - A singleton client.
-- Built-in support for EVM, [Solana](../solana/index.md), and [multichain](../multichain/index.md) sessions.
+- Built-in support for EVM, [Solana](../../solana/index.md), and [multichain](../../multichain/index.md) sessions.
 
 ## Steps
 
@@ -40,7 +40,7 @@ Replace `@metamask/sdk` and `@metamask/sdk-react` imports with the new `@metamas
 
 :::note
 `@metamask/sdk-react` has no direct replacement. If you were using `MetaMaskProvider` and
-`useSDK()`, migrate to [wagmi hooks](./quickstart/wagmi.md) or manage the client instance in your
+`useSDK()`, migrate to [wagmi hooks](../quickstart/wagmi.md) or manage the client instance in your
 own React context (see [React context pattern](#react-context-pattern-replacing-usesdk) below).
 :::
 
@@ -129,7 +129,7 @@ options that MetaMask Connect EVM no longer exposes.
 | `dappMetadata` | `dapp` | Same shape: `{ name, url, iconUrl }` |
 | `dappMetadata.name` | `dapp.name` | Required |
 | `dappMetadata.url` | `dapp.url` | Auto-set in browsers; required in Node.js and React Native |
-| `infuraAPIKey` | `api.supportedNetworks` via [`getInfuraRpcUrls({ infuraApiKey })`](./reference/methods.md#getinfurarpcurls) | Helper generates RPC URLs for all Infura-supported chains |
+| `infuraAPIKey` | `api.supportedNetworks` via [`getInfuraRpcUrls({ infuraApiKey })`](../reference/methods.md#getinfurarpcurls) | Helper generates RPC URLs for all Infura-supported chains |
 | `readonlyRPCMap` | `api.supportedNetworks` | Merge into the same object |
 | `headless` | `ui.headless` | Same behavior |
 | `extensionOnly` | `ui.preferExtension` | `true` prefers extension (default); not the same as "only" |
@@ -202,7 +202,7 @@ const txHash = await client.connectWith({
 :::tip React Native polyfills
 Browser-based setups (Vite, Webpack) work without polyfills. If you are migrating a **React Native**
 app and encounter errors referencing `Buffer`, `crypto`, `stream`, or `Event is not defined`, see
-[React Native Metro polyfill issues](../troubleshooting/metro-polyfill-issues.md).
+[React Native Metro polyfill issues](../../troubleshooting/metro-polyfill-issues.md).
 :::
 
 ### 5. Update provider access
@@ -303,7 +303,7 @@ MetaMask Connect EVM introduces features that are not available in `@metamask/sd
 #### Next step: Go multichain
 
 If your dapp supports (or plans to support) both EVM and Solana, consider upgrading to the
-[multichain client](../multichain/quickstart/javascript.md).
+[multichain client](../../multichain/quickstart/javascript.md).
 The EVM client is built on top of `createMultichainClient` internally, so the upgrade is
 straightforward:
 
@@ -334,7 +334,7 @@ await multichainClient.invokeMethod({
 })
 ```
 
-See the [multichain quickstart](../multichain/quickstart/javascript.md) for a full walkthrough.
+See the [multichain quickstart](../../multichain/quickstart/javascript.md) for a full walkthrough.
 
 ## Full option mapping
 
@@ -346,7 +346,7 @@ See the [multichain quickstart](../multichain/quickstart/javascript.md) for a fu
 | `sdk.getProvider()`      | `client.getProvider()`                             | Returns EIP-1193 provider             |
 | `sdk.disconnect()`       | `client.disconnect()`                              | Same, plus partial disconnect support |
 | `dappMetadata`           | `dapp`                                             | Renamed                               |
-| `infuraAPIKey`           | [`getInfuraRpcUrls({ infuraApiKey })`](./reference/methods.md#getinfurarpcurls) in `api.supportedNetworks` | Helper function                       |
+| `infuraAPIKey`           | [`getInfuraRpcUrls({ infuraApiKey })`](../reference/methods.md#getinfurarpcurls) in `api.supportedNetworks` | Helper function                       |
 | `readonlyRPCMap`         | `api.supportedNetworks`                            | Merged with Infura URLs               |
 | `headless`               | `ui.headless`                                      | Moved to `ui` namespace               |
 | `extensionOnly`          | `ui.preferExtension`                               | Renamed, slightly different semantics |
@@ -391,7 +391,7 @@ export function useEVMClient() {
 }
 ```
 
-For a full-featured solution, consider using [Wagmi](./quickstart/wagmi.md) with the MetaMask
+For a full-featured solution, consider using [Wagmi](../quickstart/wagmi.md) with the MetaMask
 connector, which provides React hooks out of the box.
 
 :::tip
@@ -401,8 +401,8 @@ surface in one environment but not the other.
 
 ## Next steps
 
-- [Connect to EVM quickstart](./quickstart/javascript.md)
-- [Manage user accounts](./guides/manage-user-accounts.md)
-- [Send transactions](./guides/send-transactions/index.md)
-- [Production readiness checklist](./guides/best-practices/production-readiness.md)
-- [React Native polyfill troubleshooting](../troubleshooting/metro-polyfill-issues.md)
+- [Connect to EVM quickstart](../quickstart/javascript.md)
+- [Manage user accounts](./manage-user-accounts.md)
+- [Send transactions](./send-transactions/index.md)
+- [Production readiness checklist](./best-practices/production-readiness.md)
+- [React Native polyfill troubleshooting](../../troubleshooting/metro-polyfill-issues.md)

@@ -8,7 +8,7 @@ keywords: [connect, MetaMask, React, Native, Solana, SDK, dapp, mobile dapp, pol
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Connect to Solana using React Native
+# Connect to Solana - React Native quickstart
 
 Get started with MetaMask Connect Solana in your React Native or Expo dapp.
 
@@ -221,8 +221,8 @@ you will get `crypto.getRandomValues is not a function`.
 ### 6. Use MetaMask Connect with Solana
 
 Initialize the multichain client and use `invokeMethod` to interact with Solana.
-`mobile.preferredOpenLink` is **required** -- it tells MetaMask Connect how to open deeplinks to the MetaMask
-Mobile app:
+`mobile.preferredOpenLink` is **required** — it tells MetaMask Connect how to open deeplinks to the MetaMask
+mobile app:
 
 ```tsx
 import React, { useEffect, useRef, useState, useCallback } from 'react'
@@ -416,7 +416,7 @@ Devnet and testnet require [MetaMask Flask](https://metamask.io/flask/). Product
 
 ## Next steps
 
-- [Send a legacy Solana transaction](../guides/send-legacy-transaction.md)
-- [Send a versioned Solana transaction](../guides/send-versioned-transaction.md)
-- [Sign a Solana message](../guides/sign-data/sign-message.md)
-- [Troubleshoot bundler polyfill issues](../../troubleshooting/metro-polyfill-issues.md)
+- [Send a legacy Solana transaction.](../guides/send-legacy-transaction.md)
+- [Send a versioned Solana transaction.](../guides/send-versioned-transaction.md)
+- [Sign a Solana message.](../guides/sign-data/sign-message.md)
+- [Troubleshoot bundler polyfill issues.](../../troubleshooting/metro-polyfill-issues.md)

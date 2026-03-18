@@ -1,5 +1,5 @@
 ---
-title: 'MetaMask Connect Solana Methods Reference'
+title: 'MetaMask Connect Solana methods'
 description: Complete methods reference for MetaMask Connect Solana, including createSolanaClient configuration and wallet-standard features.
 keywords:
   [
@@ -17,14 +17,14 @@ keywords:
 toc_max_heading_level: 2
 ---
 
-# MetaMask Connect Solana SDK methods
+# MetaMask Connect Solana methods
 
-MetaMask Connect Solana (`@metamask/connect-solana`) provides `createSolanaClient()` to initialize the client, `getWallet()` to access wallet-standard features (signTransaction, signAndSendTransaction, signMessage), and automatic wallet-standard registration for compatibility with the Solana Wallet Adapter ecosystem. The client wraps `@metamask/connect-multichain` and handles wallet discovery and session management automatically.
+MetaMask Connect Solana (`@metamask/connect-solana`) provides `createSolanaClient()` to initialize the client, `getWallet()` to access Wallet Standard features (`signTransaction`, `signAndSendTransaction`, `signMessage`), and automatic Wallet Standard registration for compatibility with the Solana Wallet Adapter ecosystem. The client wraps `@metamask/connect-multichain` and handles wallet discovery and session management automatically.
 
 ## `createSolanaClient`
 
 Creates a new Solana client instance.
-By default, the wallet is automatically registered with the wallet-standard registry on creation,
+By default, the wallet is automatically registered with the Wallet Standard registry on creation,
 making MetaMask discoverable by Solana dapps and wallet adapters.
 
 Under the hood, `createSolanaClient` delegates to `createMultichainClient`, which is a singleton.
@@ -72,12 +72,12 @@ const client = await createSolanaClient({
 
 ## `getWallet`
 
-Returns a wallet-standard compatible MetaMask wallet instance.
+Returns a Wallet Standard compatible MetaMask wallet instance.
 Use this to access wallet features directly outside of the Solana wallet adapter.
 
 ### Returns
 
-A wallet-standard `Wallet` object.
+A Wallet Standard `Wallet` object.
 
 ### Example
 
@@ -88,7 +88,7 @@ console.log('Wallet name:', wallet.name)
 
 ## `registerWallet`
 
-Registers the MetaMask wallet with the wallet-standard registry, making it automatically
+Registers the MetaMask wallet with the Wallet Standard registry, making it automatically
 discoverable by Solana dapps.
 This is a no-op if the wallet was already auto-registered during creation (that is,
 `skipAutoRegister` was not set to `true`).
@@ -152,10 +152,10 @@ const solAccounts = session.sessionScopes['solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKv
 console.log('Solana accounts:', solAccounts)
 ```
 
-## Supported wallet-standard features
+## Supported Wallet Standard features
 
 The wallet returned by [`getWallet()`](#getwallet) implements the following
-[wallet-standard](https://github.com/wallet-standard/wallet-standard) features.
+[Wallet Standard](https://github.com/wallet-standard/wallet-standard) features.
 Access them via `wallet.features['<feature>']`.
 
 | Feature                         | Description                                            |
@@ -219,13 +219,13 @@ The object returned by [`createSolanaClient`](#createsolanaclient).
 | Property / Method  | Type                  | Description                                                    |
 | ------------------ | --------------------- | -------------------------------------------------------------- |
 | `core`             | `MultichainCore`      | The underlying MultichainCore instance.                        |
-| `getWallet()`      | `() => Wallet`        | Returns a wallet-standard compatible MetaMask wallet instance. |
-| `registerWallet()` | `() => Promise<void>` | Registers MetaMask with the wallet-standard registry.          |
+| `getWallet()`      | `() => Wallet`        | Returns a Wallet Standard compatible MetaMask wallet instance. |
+| `registerWallet()` | `() => Promise<void>` | Registers MetaMask with the Wallet Standard registry.          |
 | `disconnect()`     | `() => Promise<void>` | Disconnects all Solana scopes from MetaMask.                   |
 
 ## Next steps
 
-- [JavaScript quickstart](../quickstart/javascript.md) to set up MetaMask Connect Solana in a dapp.
-- [Send a legacy transaction](../guides/send-legacy-transaction.md) using the `signAndSendTransaction` wallet-standard feature.
-- [Sign messages](../guides/sign-data/sign-message.md) using the `signMessage` wallet-standard feature.
-- [Multichain SDK methods](../../multichain/reference/methods.md) for the lower-level multichain client API.
+- Follow the [JavaScript quickstart](../quickstart/javascript.md) to set up MetaMask Connect Solana in a dapp.
+- [Send a legacy transaction](../guides/send-legacy-transaction.md) using the `signAndSendTransaction` Wallet Standard feature.
+- [Sign messages](../guides/sign-data/sign-message.md) using the `signMessage` Wallet Standard feature.
+- See the [multichain methods](../../multichain/reference/methods.md) for the lower-level multichain client API.

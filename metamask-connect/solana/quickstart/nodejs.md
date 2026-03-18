@@ -5,7 +5,7 @@ sidebar_label: Node.js
 keywords: [connect, MetaMask, Node.js, Solana, SDK, CLI, server-side, createSolanaClient, invokeMethod, signMessage, QR code, node quickstart]
 ---
 
-# Connect to Solana using Node.js
+# Connect to Solana - Node.js quickstart
 
 Get started with MetaMask Connect Solana in a Node.js application.
 The SDK displays a QR code in the terminal that you scan with MetaMask Mobile to establish a connection.
@@ -56,16 +56,16 @@ const solanaClient = await createSolanaClient({
 })
 ```
 
-:::info `createSolanaClient` is async
+:::info Asynchronous client
 `createSolanaClient` returns a promise. Always `await` it before using the client.
-The client uses a singleton multichain core under the hood -- calling it multiple times
+The client uses a singleton multichain core under the hood — calling it multiple times
 returns the same underlying session.
 :::
 
 ### 3. Connect to MetaMask
 
 Use the multichain core to connect with a Solana scope.
-A QR code appears in the terminal -- scan it with MetaMask Mobile:
+A QR code appears in the terminal — scan it with the MetaMask mobile app:
 
 ```javascript
 await solanaClient.core.connect([SOLANA_MAINNET], [])
@@ -184,7 +184,7 @@ node index.mjs
 
 ## Next steps
 
-- [Send a legacy Solana transaction](../guides/send-legacy-transaction.md)
-- [Send a versioned Solana transaction](../guides/send-versioned-transaction.md)
-- [Sign a Solana message](../guides/sign-data/sign-message.md)
-- [Use the Multichain SDK](../../multichain/quickstart/nodejs.md) to connect to both EVM and Solana from a single session
+- [Send a legacy Solana transaction.](../guides/send-legacy-transaction.md)
+- [Send a versioned Solana transaction.](../guides/send-versioned-transaction.md)
+- [Sign a Solana message.](../guides/sign-data/sign-message.md)
+- [Use the multichain client](../../multichain/quickstart/nodejs.md) to connect to both EVM and Solana from a single session.

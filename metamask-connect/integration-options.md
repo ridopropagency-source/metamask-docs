@@ -29,7 +29,7 @@ MetaMask Connect offers three integration paths:
 - **Single-ecosystem** (`@metamask/connect-evm` or `@metamask/connect-solana`) for drop-in per-chain providers.
 - **Multi-ecosystem** (both single-ecosystem packages together) for dapps supporting both chains with familiar interfaces.
 
-We recommend using the Multichain client, which provides a single connection prompt across
+We recommend using the multichain client, which provides a single connection prompt across
 all ecosystems.
 If your dapp targets a single chain or you prefer per-chain provider interfaces, you can use the single-ecosystem or multi-ecosystem option.
 
@@ -44,7 +44,7 @@ across all ecosystems.
 
 ## Single-ecosystem
 
-If your dapp targets a single ecosystem, use [`@metamask/connect-evm`](/metamask-connect/evm) or [`@metamask/connect-solana`](/metamask-connect/solana) to add MetaMask Connect to an existing dapp with minimal code changes.
+If your dapp targets a single ecosystem, use [`@metamask/connect-evm`](evm/index.md) or [`@metamask/connect-solana`](solana/index.md) to add MetaMask Connect to an existing dapp with minimal code changes.
 
 - **EVM**: Provides an [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) compatible provider that
   works with `ethers.js`, `viem`, and `web3.js`.
@@ -53,15 +53,15 @@ If your dapp targets a single ecosystem, use [`@metamask/connect-evm`](/metamask
 
 ## Multi-ecosystem
 
-If your dapp supports both EVM and Solana, use [`@metamask/connect-evm`](/metamask-connect/evm) and
-[`@metamask/connect-solana`](/metamask-connect/solana) together to
+If your dapp supports both EVM and Solana, use [`@metamask/connect-evm`](evm/index.md) and
+[`@metamask/connect-solana`](solana/index.md) together to
 support both ecosystems while keeping familiar provider interfaces for each.
 
 ## Compare options
 
 |                    | Multichain                                           | Single-ecosystem                                                                       | Multi-ecosystem                         |
 | ------------------ | ---------------------------------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------- |
-| **Package**        | [`connect-multichain`](/metamask-connect/multichain) | [`connect-evm`](/metamask-connect/evm) or [`connect-solana`](/metamask-connect/solana) | Both `connect-evm` and `connect-solana` |
+| **Package**        | [`connect-multichain`](multichain/index.md) | [`connect-evm`](evm/index.md) or [`connect-solana`](solana/index.md) | Both `connect-evm` and `connect-solana` |
 | **Effort**         | Medium — scope-based API                             | Low — drop-in provider                                                                 | Low — two providers                     |
 | **EVM support**    | Via `wallet_invokeMethod`                            | EIP-1193 provider                                                                      | EIP-1193 provider                       |
 | **Solana support** | Via `wallet_invokeMethod`                            | Wallet Standard                                                                        | Wallet Standard                         |
@@ -88,7 +88,7 @@ In most cases, update a dependency or add a connector with no changes to your ap
 
 ### Which integration option should I choose?
 
-Choose **Multichain** (`@metamask/connect-multichain`) if your dapp needs to connect to both EVM and Solana in a single session with one approval prompt.
+Choose **multichain** (`@metamask/connect-multichain`) if your dapp needs to connect to both EVM and Solana in a single session with one approval prompt.
 Choose **single-ecosystem** (`@metamask/connect-evm` or `@metamask/connect-solana`) if your dapp targets one chain and you want a drop-in provider compatible with existing libraries.
 Choose **multi-ecosystem** (both single-ecosystem packages) if you want per-chain providers for both EVM and Solana.
 

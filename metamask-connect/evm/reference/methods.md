@@ -19,7 +19,7 @@ keywords:
 toc_max_heading_level: 2
 ---
 
-# MetaMask Connect EVM SDK methods
+# MetaMask Connect EVM methods
 
 MetaMask Connect EVM (`@metamask/connect-evm`) exposes five primary methods: `connect()` to establish a wallet session, `connectAndSign()` to connect and sign a message in one step, `connectWith()` to connect and execute an RPC call atomically, `getProvider()` to obtain the EIP-1193 provider for arbitrary JSON-RPC requests, and `disconnect()` to end the session.
 

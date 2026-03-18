@@ -8,11 +8,11 @@ keywords: [solana, wallet adapter, wallet standard, connect, react, "@solana/wal
 # Use the Wallet Adapter
 
 Solana's [Wallet Adapter](https://github.com/solana-labs/wallet-adapter) is the standard way for
-Solana dapps to discover and connect to wallets. MetaMask implements the
+Solana dapps to discover and connect to wallets. MetaMask Connect Solana implements the
 [Wallet Standard](https://github.com/wallet-standard/wallet-standard), so it works with the Wallet
 Adapter out-of-the-box.
 
-This guide shows you how to set it up with MetaMask in a React dapp. You can also use the
+This guide shows you how to set up the Wallet Adapter with MetaMask in a React dapp. You can also use the
 [`create-solana-dapp`](https://github.com/solana-foundation/create-solana-dapp) CLI tool to generate
 a new project with the Wallet Adapter built in.
 

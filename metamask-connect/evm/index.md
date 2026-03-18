@@ -25,7 +25,7 @@ import CardList from '@site/src/components/CardList'
 
 # Connect to EVM networks
 
-`@metamask/connect-evm` is the modern replacement for `@metamask/sdk`.
+MetaMask Connect EVM (`@metamask/connect-evm`) is the modern replacement for `@metamask/sdk`.
 Use it to connect your dapp to Ethereum and other EVM networks in the MetaMask mobile app
 or browser extension.
 
@@ -37,7 +37,7 @@ convenience methods like [`connectAndSign`](reference/methods.md#connectandsign)
 [`connectWith`](reference/methods.md#connectwith).
 
 :::tip Coming from `@metamask/sdk`?
-See the [migration guide](migrate-from-sdk.md) for a step-by-step upgrade path covering
+See the [migration guide](guides/migrate-from-sdk.md) for a step-by-step upgrade path covering
 package changes, API differences, and new capabilities.
 :::
 
@@ -99,4 +99,4 @@ To migrate:
 - Switch from synchronous to asynchronous initialization.
 - Update your provider access pattern.
 
-See the [migration guide](migrate-from-sdk.md) for a step-by-step walkthrough with code examples for each change.
+See the [migration guide](guides/migrate-from-sdk.md) for a step-by-step walkthrough with code examples for each change.

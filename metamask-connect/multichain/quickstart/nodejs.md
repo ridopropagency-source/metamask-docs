@@ -56,7 +56,7 @@ const client = await createMultichainClient({
 })
 ```
 
-:::info `createMultichainClient` is async
+:::info Asynchronous client
 `createMultichainClient` returns a promise. Always `await` it before using the client.
 The client is a **singleton** — calling it again returns the same instance with merged options.
 :::
@@ -64,7 +64,7 @@ The client is a **singleton** — calling it again returns the same instance wit
 ### 3. Connect to MetaMask
 
 Connect with both EVM and Solana scopes in a single call.
-A QR code appears in the terminal — scan it with MetaMask Mobile:
+A QR code appears in the terminal — scan it with the MetaMask mobile app:
 
 ```javascript
 await client.connect(

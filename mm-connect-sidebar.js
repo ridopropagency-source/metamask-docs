@@ -131,7 +131,7 @@ const metamaskConnectSidebar = {
       collapsible: false,
       collapsed: false,
       items: [
-        'evm/migrate-from-sdk',
+        'evm/guides/migrate-from-sdk',
         'evm/guides/manage-user-accounts',
         'evm/guides/manage-networks',
         {
