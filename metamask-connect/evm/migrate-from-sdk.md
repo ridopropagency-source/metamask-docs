@@ -3,20 +3,24 @@ title: "Migrate from Legacy SDK to MetaMask Connect EVM"
 sidebar_label: Migrate from legacy SDK
 description: Step-by-step guide to migrate from the legacy @metamask/sdk to @metamask/connect-evm, covering package replacements, API changes, and configuration updates.
 keywords: [SDK, migrate, migration, upgrade, connect, MetaMask, dapp, metamask sdk migration, sdk to connect, breaking changes, "@metamask/sdk deprecation", upgrade guide]
-toc_max_heading_level: 2
 ---
 
 # Migrate from the legacy SDK
 
-This guide walks you through migrating from `@metamask/sdk` or `@metamask/sdk-react` to
-`@metamask/connect-evm`.
+This guide walks you through migrating from the legacy MetaMask SDK (`@metamask/sdk` or `@metamask/sdk-react`) to
+MetaMask Connect EVM (`@metamask/connect-evm`).
 
-MetaMask Connect EVM (`@metamask/connect-evm`) is a rewrite of the legacy MetaMask SDK(`@metamask/sdk`) built on the
-[CAIP-25 Multichain API](https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-25.md) with
-async initialization, a singleton client, and built-in support for EVM, [Solana](../solana/index.md), and
-[multichain](../multichain/index.md) sessions.
+MetaMask Connect EVM is a rewrite of the legacy SDK, built on the
+[CAIP-25 Multichain API](https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-25.md).
+Key enhancements include:
 
-## 1. Replace packages
+- Asynchronous initialization.
+- A singleton client.
+- Built-in support for EVM, [Solana](../solana/index.md), and [multichain](../multichain/index.md) sessions.
+
+## Steps
+
+### 1. Replace packages
 
 Remove the old packages and install the new ones:
 
@@ -30,7 +34,7 @@ npm uninstall @metamask/sdk-react
 npm install @metamask/connect-evm
 ```
 
-## 2. Update imports
+### 2. Update imports
 
 Replace `@metamask/sdk` and `@metamask/sdk-react` imports with the new `@metamask/connect-evm` package.
 
@@ -57,7 +61,7 @@ own React context (see [React context pattern](#react-context-pattern-replacing-
 // add-end
 ```
 
-## 3. Update initialization
+### 3. Update initialization
 
 Replace the `MetaMaskSDK` constructor and `init()` call with `createEVMClient()`, which handles
 initialization in a single async step.
@@ -115,7 +119,7 @@ recreate it on every render.
 // add-end
 ```
 
-### Option mapping
+#### Option mapping
 
 Use the following table to map `MetaMaskSDK` configuration options to their equivalents in `createEVMClient`.
 The table includes renamed options, options that moved into grouped objects (for example, `ui` and `mobile`), and
@@ -136,7 +140,7 @@ options that MetaMask Connect EVM no longer exposes.
 | `communicationServerUrl` | Removed | Managed internally |
 | `storage` | Removed | Managed internally |
 
-## 4. Update connection flow
+### 4. Update connection flow
 
 In MetaMask Connect EVM, you request chain permissions during `connect()` and receive the connected accounts
 and selected chain ID in a single response. This replaces the previous flow where you connected first
@@ -170,7 +174,7 @@ Chain IDs must be hex strings — use `'0x1'`, not `1` or `'1'`, in `chainIds` a
 `supportedNetworks` keys.
 :::
 
-### Connect-and-sign shortcut
+#### Connect-and-sign shortcut
 
 Use `connectAndSign` to connect and sign a `personal_sign` message in one user approval.
 The method returns the signature directly:
@@ -182,7 +186,7 @@ const signature = await client.connectAndSign({
 })
 ```
 
-### Connect-and-execute shortcut
+#### Connect-and-execute shortcut
 
 Connect and execute any JSON-RPC method in a single user approval.
 The method returns the RPC result directly:
@@ -201,7 +205,7 @@ app and encounter errors referencing `Buffer`, `crypto`, `stream`, or `Event is 
 [React Native Metro polyfill issues](../troubleshooting/metro-polyfill-issues.md).
 :::
 
-## 5. Update provider access
+### 5. Update provider access
 
 In MetaMask Connect EVM, `client.getProvider()` returns an EIP-1193 provider. You no longer use the
 `SDKProvider` returned by `sdk.getProvider()`.
@@ -232,9 +236,9 @@ Key differences:
   Account-dependent calls require `connect()` first.
 - `client.getProvider()` never returns `undefined`.
 
-## 6. Update event handling
+### 6. Update event handling
 
-EIP-1193 provider events work exactly the same way:
+EIP-1193 provider events work the same way:
 
 ```typescript
 const provider = client.getProvider()
@@ -282,7 +286,7 @@ provider.on('display_uri', uri => {
 })
 ```
 
-## 7. Adopt new capabilities
+### 7. Adopt new capabilities
 
 MetaMask Connect EVM introduces features that are not available in `@metamask/sdk`:
 
@@ -296,7 +300,7 @@ MetaMask Connect EVM introduces features that are not available in `@metamask/sd
 | **Partial disconnect** | `disconnect(scopes)` revokes specific CAIP scopes while keeping others active                              |
 | **Singleton client**   | Subsequent `create*Client` calls merge options into the existing instance                                  |
 
-### Next step: Go multichain
+#### Next step: Go multichain
 
 If your dapp supports (or plans to support) both EVM and Solana, consider upgrading to the
 [multichain client](../multichain/quickstart/javascript.md).
@@ -387,7 +391,7 @@ export function useEVMClient() {
 }
 ```
 
-For a full-featured solution, consider using [wagmi](./quickstart/wagmi.md) with the MetaMask
+For a full-featured solution, consider using [Wagmi](./quickstart/wagmi.md) with the MetaMask
 connector, which provides React hooks out of the box.
 
 :::tip
@@ -397,7 +401,7 @@ surface in one environment but not the other.
 
 ## Next steps
 
-- [JavaScript quickstart](./quickstart/javascript.md)
+- [Connect to EVM quickstart](./quickstart/javascript.md)
 - [Manage user accounts](./guides/manage-user-accounts.md)
 - [Send transactions](./guides/send-transactions/index.md)
 - [Production readiness checklist](./guides/best-practices/production-readiness.md)

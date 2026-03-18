@@ -1,6 +1,7 @@
 ---
 title: 'MetaMask Connect EVM - Ethereum Dapp Integration'
 sidebar_label: Introduction
+toc_max_heading_level: 2
 description: Connect your dapp to Ethereum and EVM-compatible networks using MetaMask Connect EVM. Get an EIP-1193 provider compatible with viem, ethers.js, and web3.js.
 keywords:
   [
@@ -41,16 +42,16 @@ package changes, API differences, and new capabilities.
 :::
 
 :::info Going multichain?
-If your dapp supports (or plans to support) both EVM and Solana, you can use the
+If your dapp supports (or plans to support) both EVM and Solana, use the
 [multichain client](../multichain/index.md) instead.
 The EVM and Solana clients share the same underlying multichain session, meaning the user only
-approves once. See the [multichain quickstart](../multichain/quickstart/javascript.md) to get started.
+approves once. Get started with the [multichain quickstart](../multichain/quickstart/javascript.md).
 :::
 
 ## Supported platforms and libraries
 
 MetaMask Connect EVM supports multiple integration paths. You can install it from npm, use it through
-developer libraries such as Wagmi, or integrate it through supported third-party libraries.
+developer libraries like Wagmi, or integrate it through supported third-party libraries.
 
 Choose a quickstart based on your stack.
 
@@ -79,16 +80,23 @@ The EVM client works seamlessly with popular Ethereum libraries:
 | [ethers.js](https://docs.ethers.org/) | Pass `client.getProvider()` to `BrowserProvider`  |
 | [web3.js](https://web3js.org/)        | Pass `client.getProvider()` to `Web3` constructor |
 
-### Frequently asked questions
+## Frequently asked questions
 
-#### What libraries does MetaMask Connect EVM work with?
+### What libraries does MetaMask Connect EVM work with?
 
-MetaMask Connect EVM provides an EIP-1193 compatible provider that works with viem (via `custom()` transport), ethers.js (via `BrowserProvider`), web3.js (via `Web3` constructor), and wagmi (via the `metamask()` connector). It also supports wallet connector libraries like RainbowKit, ConnectKit, Dynamic, Privy, Web3Auth, and more.
+MetaMask Connect EVM provides an EIP-1193 compatible provider that works with viem (via `custom()` transport), ethers.js (via `BrowserProvider`), web3.js (via `Web3` constructor), and Wagmi (via the `metamask()` connector). It also supports wallet connector libraries like RainbowKit, ConnectKit, Dynamic, Privy, Web3Auth, and more.
 
-#### Do I need an Infura API key for MetaMask Connect EVM?
+### Do I need an Infura API key for MetaMask Connect EVM?
 
-An Infura API key is **recommended** for production dapps. MetaMask Connect EVM uses RPC URLs to route read requests and relay connections. Use the [`getInfuraRpcUrls`](./reference/methods.md#getinfurarpcurls) helper to generate URLs for all Infura-supported chains automatically, or provide your own RPC endpoints in the `api.supportedNetworks` configuration.
+We recommend using an Infura API key for production dapps. MetaMask Connect EVM uses RPC URLs to route read requests and relay connections. Use the [`getInfuraRpcUrls`](./reference/methods.md#getinfurarpcurls) helper to generate URLs for all Infura-supported chains automatically, or provide your own RPC endpoints in the `api.supportedNetworks` configuration.
 
-#### How do I migrate from @metamask/sdk to @metamask/connect-evm?
+### How do I migrate from `@metamask/sdk` to `@metamask/connect-evm`?
 
-Replace `@metamask/sdk` with `@metamask/connect-evm` in your dependencies, update imports from `MetaMaskSDK` to `createEVMClient`, switch from synchronous to async initialization, and update your provider access pattern. The [migration guide](migrate-from-sdk.md) provides a complete step-by-step walkthrough with code examples for each change.
+To migrate:
+
+- Replace `@metamask/sdk` with `@metamask/connect-evm` in your dependencies.
+- Update imports from `MetaMaskSDK` to `createEVMClient`.
+- Switch from synchronous to asynchronous initialization.
+- Update your provider access pattern.
+
+See the [migration guide](migrate-from-sdk.md) for a step-by-step walkthrough with code examples for each change.

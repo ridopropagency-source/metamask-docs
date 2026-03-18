@@ -1,5 +1,5 @@
 ---
-title: 'MetaMask Connect EVM Methods Reference'
+title: 'MetaMask Connect EVM methods'
 description: Complete API reference for MetaMask Connect EVM methods including connect, connectAndSign, connectWith, getProvider, getInfuraRpcUrls, and disconnect.
 keywords:
   [

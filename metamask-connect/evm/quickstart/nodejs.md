@@ -5,7 +5,7 @@ sidebar_label: Node.js
 keywords: [connect, MetaMask, Node.js, SDK, CLI, server-side, createEVMClient, EIP-1193, QR code, personal_sign, node quickstart]
 ---
 
-# Connect to MetaMask using Node.js
+# Connect to EVM - Node.js quickstart
 
 Get started with MetaMask Connect EVM in a Node.js application.
 The SDK displays a QR code in the terminal that you scan with MetaMask Mobile to establish a connection.

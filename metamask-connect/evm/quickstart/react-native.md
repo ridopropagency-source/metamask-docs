@@ -8,7 +8,7 @@ keywords: [connect, MetaMask, React, Native, SDK, dapp, react native wallet, mob
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Connect to MetaMask using React Native
+# Connect to EVM - React Native quickstart
 
 Get started with MetaMask Connect EVM in your React Native or Expo dapp.
 

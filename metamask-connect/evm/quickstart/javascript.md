@@ -8,7 +8,7 @@ keywords: [connect, MetaMask, JavaScript, SDK, dapp, Wallet SDK, vanilla javascr
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Connect to MetaMask using JavaScript
+# Connect to EVM quickstart
 
 Install `@metamask/connect-evm`, initialize a client with `createEVMClient`, and connect to the MetaMask wallet in under 5 minutes. MetaMask Connect EVM provides an EIP-1193 provider that works with viem, ethers.js, and web3.js, handles cross-platform connections (desktop extension, mobile QR code, and deeplinks), and persists sessions across page reloads.
 
