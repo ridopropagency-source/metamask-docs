@@ -79,8 +79,8 @@ The user's setup uses DKG to instantiate 2 out of 3 (2/3) sharing, $f_0(x) = a_0
 shares: $f_0(1), f_0(z_1), f_0(z_2)$ where $z_1,z_2 \in \mathbb{Z}_q$.
 
 1. $f_0(z_1)$ **ShareA** is managed by the Embedded Wallets infrastructure: This share is kept and managed by authentication flows (for example, OAuth login from an existing account) in a distributed security model.
-2. **$f_0(1)$ **ShareB\*\* is stored on the user's device: Implementation is device and system specific. For example, on mobile devices, the share could be stored in device storage secured via biometrics.
-3. **$f_0(z_2)$ **ShareC\*\* is a backup share: An extra share to be kept by the user, possibly kept on a separate
+2. $f_0(1)$ **ShareB** is stored on the user's device: Implementation is device and system specific. For example, on mobile devices, the share could be stored in device storage secured via biometrics.
+3. $f_0(z_2)$ **ShareC** is a backup share: An extra share to be kept by the user, possibly kept on a separate
    device (such as a hardware device), downloaded, or based on user input with enough entropy (such as a password or
    security questions).
 

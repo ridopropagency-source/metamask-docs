@@ -92,23 +92,17 @@ const buildMarkdown = () => {
     const tag = section.tagName.toLowerCase()
 
     if (tag === 'h2') {
-      const text = decodeHTML(section.innerHTML)
-        .replace(/<[^>]+>/g, '')
-        .trim()
+      const text = (section.textContent || '').trim()
       markdown += `\n## ${text}\n\n`
       return
     }
     if (tag === 'h3') {
-      const text = decodeHTML(section.innerHTML)
-        .replace(/<[^>]+>/g, '')
-        .trim()
+      const text = (section.textContent || '').trim()
       markdown += `\n### ${text}\n\n`
       return
     }
     if (tag === 'h4') {
-      const text = decodeHTML(section.innerHTML)
-        .replace(/<[^>]+>/g, '')
-        .trim()
+      const text = (section.textContent || '').trim()
       markdown += `\n#### ${text}\n\n`
       return
     }
