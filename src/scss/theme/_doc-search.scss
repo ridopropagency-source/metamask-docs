@@ -412,8 +412,45 @@ div[class*="DocSearch-Sidepanel"] {
     padding: 0.4rem 0 0.6rem !important;
   }
 }
-
-/* Light mode */
+ 
+/* Dark mode  */
+[data-theme='dark'] div[class*="DocSearch-Sidepanel"] {
+  background-color: #1b1b1d !important;
+  color: #e3e3e3 !important;
+ 
+  [class*="MessageContent"],
+  [class*="message-content"],
+  [class*="AskAiScreen"] {
+    background-color: #1b1b1d !important;
+    color: #e3e3e3 !important;
+  }
+ 
+  /* Headers */
+  [class*="Header"],
+  [class*="header"] {
+    background-color: #1b1b1d !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #e3e3e3 !important;
+  }
+ 
+  /* Source */
+  .DocSearch-AskAiScreen-RelatedSources-List a {
+    background-color: #2a2a2e !important;
+    color: #e3e3e3 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+  }
+ 
+  .DocSearch-AskAiScreen-MessageContent-Tool {
+    color: #939397 !important;
+  }
+ 
+  /* Code blocks */
+  code {
+    color: #e3e3e3 !important;
+  }
+}
+ 
+/* ── Light mode ── */
 [data-theme='light'] div[class*="DocSearch-Sidepanel"] {
   [class*="ChatInput"],
   [class*="chat-input"],
