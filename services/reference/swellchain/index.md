@@ -21,31 +21,31 @@ infrastructure for efficient transaction processing and scalability.
 
 - The [official Swellchain site](https://www.swellnetwork.io/) for more information.
 - The official
-[Optimism Ethereum JSON-RPC API documentation](https://docs.optimism.io/node-operators/reference/op-node-json-rpc)
-(Bedrock release) for custom Swellchain methods.
+  [Optimism Ethereum JSON-RPC API documentation](https://docs.optimism.io/node-operators/reference/op-node-json-rpc)
+  (Bedrock release) for custom Swellchain methods.
 
 :::
 
 Select an option below to get started with the Swellchain network.
 
 <CardList
-  items={[
-    {
-      href: "/services/reference/swellchain/quickstart",
-      title: "Quickstart",
-      description: "Learn how to quickly connect and make calls to Swellchain."
-    },
-    {
-      href: "/services/reference/swellchain/json-rpc-methods",
-      title: "JSON-RPC APIs",
-      description: "View the APIs available for communicating with Swellchain."
-    },
-    {
-      href: "/developer-tools/dashboard/get-started/create-api",
-      title: "Create an API key",
-      description: "Learn how to create and secure an API key."
-    }
-  ]}
+items={[
+{
+href: "/services/reference/swellchain/quickstart",
+title: "Quickstart",
+description: "Learn how to quickly connect and make calls to Swellchain."
+},
+{
+href: "/services/reference/swellchain/json-rpc-methods",
+title: "JSON-RPC APIs",
+description: "View the APIs available for communicating with Swellchain."
+},
+{
+href: "/developer-tools/dashboard/get-started/create-api",
+title: "Create an API key",
+description: "Learn how to create and secure an API key."
+}
+]}
 />
 
 ## Partners and privacy policies
@@ -53,5 +53,6 @@ Select an option below to get started with the Swellchain network.
 No personal information is sent as part of partner requests, only information necessary to fulfill your API request. This means that Infura's partner service provider can service your request, but not store the content of your request.
 
 The following partners provide access to Swellchain:
+
 - Infstones ([Privacy Policy](https://infstones.com/terms/privacy-notice))
 - [NorthWest Nodes](https://northwestnodes.com/)

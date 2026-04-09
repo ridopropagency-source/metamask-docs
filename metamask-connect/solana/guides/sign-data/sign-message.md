@@ -1,8 +1,17 @@
 ---
-title: "Sign Messages on Solana - MetaMask Connect"
+title: 'Sign Messages on Solana - MetaMask Connect'
 sidebar_label: Sign messages
 description: Request offchain cryptographic signatures from users on Solana using MetaMask Connect's signMessage wallet-standard feature.
-keywords: [solana sign message, signMessage, wallet-standard, offchain signature, message verification, metamask, solana]
+keywords:
+  [
+    solana sign message,
+    signMessage,
+    wallet-standard,
+    offchain signature,
+    message verification,
+    metamask,
+    solana,
+  ]
 ---
 
 # Sign messages
@@ -33,9 +42,7 @@ const wallet = solanaClient.getWallet()
 const { accounts } = await wallet.features['standard:connect'].connect()
 
 async function signMessage() {
-  const message = new TextEncoder().encode(
-    'Only good humans allowed. Paw-thorize yourself.'
-  )
+  const message = new TextEncoder().encode('Only good humans allowed. Paw-thorize yourself.')
 
   const [{ signature }] = await wallet.features['solana:signMessage'].signMessage({
     account: accounts[0],

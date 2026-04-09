@@ -1,9 +1,22 @@
 ---
-title: "ConnectKit Integration - MetaMask Connect EVM"
+title: 'ConnectKit Integration - MetaMask Connect EVM'
 description: Integrate MetaMask into your React dapp using ConnectKit's wallet modal, wagmi connectors, and the Family wallet configuration.
 toc_max_heading_level: 3
 sidebar_label: ConnectKit
-keywords: [connect, MetaMask, JavaScript, ConnectKit, SDK, dapp, Wallet SDK, connectkit integration, wallet modal, family wallet connector, react wallet]
+keywords:
+  [
+    connect,
+    MetaMask,
+    JavaScript,
+    ConnectKit,
+    SDK,
+    dapp,
+    Wallet SDK,
+    connectkit integration,
+    wallet modal,
+    family wallet connector,
+    react wallet,
+  ]
 ---
 
 :::info Heads up

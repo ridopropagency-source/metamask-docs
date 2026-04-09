@@ -1,8 +1,18 @@
 ---
-title: "Send Solana Legacy Transactions - MetaMask Connect"
+title: 'Send Solana Legacy Transactions - MetaMask Connect'
 sidebar_label: Send a legacy transaction
 description: Sign and send Solana legacy transactions through MetaMask Connect using the wallet-standard signAndSendTransaction feature with @solana/web3.js.
-keywords: [solana, legacy transaction, send transaction, metamask, signAndSendTransaction, wallet-standard, solana web3.js, SPL token transfer]
+keywords:
+  [
+    solana,
+    legacy transaction,
+    send transaction,
+    metamask,
+    signAndSendTransaction,
+    wallet-standard,
+    solana web3.js,
+    SPL token transfer,
+  ]
 ---
 
 # Send a legacy transaction
@@ -48,13 +58,15 @@ const transaction = new Transaction().add(
     fromPubkey: publicKey,
     toPubkey: publicKey,
     lamports: 10,
-  }),
+  })
 )
 
 transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash
 transaction.feePayer = publicKey
 
-const [{ signature }] = await wallet.features['solana:signAndSendTransaction'].signAndSendTransaction({
+const [{ signature }] = await wallet.features[
+  'solana:signAndSendTransaction'
+].signAndSendTransaction({
   account,
   transaction: transaction.serialize({ verifySignatures: false }),
   chain: 'solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1',
@@ -74,7 +86,9 @@ for (const transaction of transactions) {
   transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash
   transaction.feePayer = publicKey
 
-  const [{ signature }] = await wallet.features['solana:signAndSendTransaction'].signAndSendTransaction({
+  const [{ signature }] = await wallet.features[
+    'solana:signAndSendTransaction'
+  ].signAndSendTransaction({
     account,
     transaction: transaction.serialize({ verifySignatures: false }),
     chain: 'solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1',

@@ -19,13 +19,14 @@
     "lint:js": "eslint . --max-warnings=5",
     "lint:style": "stylelint \"src/**/*.css\" --fix",
     "lint:fix": "npm run lint:js -- --fix",
-    "format": "prettier --write '{blog,docs,src}/**/*.{md,mdx,ts,js,tsx,jsx,json}'"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "lint-staged": {
     "src/**/*.{ts,js,jsx,tsx}": "npm run lint:fix",
     "**/*.{ts,tsx}": "npm run typecheck-staged",
     "**/*.css": "npm run lint:style",
-    "**/*.{md,mdx,ts,js,tsx,jsx,json}": "npm run format"
+    "**/*.{md,mdx,ts,js,tsx,jsx,json,css,scss,html,yml,yaml}": "prettier --write"
   },
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^14.2.0",

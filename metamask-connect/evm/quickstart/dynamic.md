@@ -1,9 +1,21 @@
 ---
-title: "Dynamic SDK Integration - MetaMask Connect EVM"
+title: 'Dynamic SDK Integration - MetaMask Connect EVM'
 sidebar_label: Dynamic SDK
 description: Combine MetaMask with Dynamic SDK for multi-wallet support, social login, and embedded wallet features in your React dapp.
 toc_max_heading_level: 3
-keywords: [connect, MetaMask, Dynamic, SDK, dapp, Wallet SDK, dynamic xyz, embedded wallet, social login, multi-wallet]
+keywords:
+  [
+    connect,
+    MetaMask,
+    Dynamic,
+    SDK,
+    dapp,
+    Wallet SDK,
+    dynamic xyz,
+    embedded wallet,
+    social login,
+    multi-wallet,
+  ]
 ---
 
 :::info Heads up
@@ -50,15 +62,15 @@ Use MetaMask SDK features directly within Dynamic SDK.
     <summary>Degit vs. Git clone</summary>
     <div>
 
-    `degit` is a tool that enables cloning only the directory structure from a GitHub repository, without retrieving the entire repository.
-    
-    Alternatively, use `git clone` to download the entire repository.
-    Clone the MetaMask SDK examples repository and navigate into the `partners/dynamic` directory:
+   `degit` is a tool that enables cloning only the directory structure from a GitHub repository, without retrieving the entire repository.
 
-    ```bash
-    git clone https://github.com/MetaMask/metamask-sdk-examples
-    cd metamask-sdk-examples/partners/dynamic
-    ```
+   Alternatively, use `git clone` to download the entire repository.
+   Clone the MetaMask SDK examples repository and navigate into the `partners/dynamic` directory:
+
+   ```bash
+   git clone https://github.com/MetaMask/metamask-sdk-examples
+   cd metamask-sdk-examples/partners/dynamic
+   ```
 
     </div>
     </details>

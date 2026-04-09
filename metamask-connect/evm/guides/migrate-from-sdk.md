@@ -1,8 +1,22 @@
 ---
-title: "Migrate from Legacy SDK to MetaMask Connect EVM"
+title: 'Migrate from Legacy SDK to MetaMask Connect EVM'
 sidebar_label: Migrate from legacy SDK
 description: Step-by-step guide to migrate from the legacy @metamask/sdk to @metamask/connect-evm, covering package replacements, API changes, and configuration updates.
-keywords: [SDK, migrate, migration, upgrade, connect, MetaMask, dapp, metamask sdk migration, sdk to connect, breaking changes, "@metamask/sdk deprecation", upgrade guide]
+keywords:
+  [
+    SDK,
+    migrate,
+    migration,
+    upgrade,
+    connect,
+    MetaMask,
+    dapp,
+    metamask sdk migration,
+    sdk to connect,
+    breaking changes,
+    '@metamask/sdk deprecation',
+    upgrade guide,
+  ]
 ---
 
 # Migrate from the legacy SDK
@@ -26,7 +40,7 @@ Remove the old packages and install the new ones:
 
 ```bash npm2yarn
 # Remove old
-npm uninstall @metamask/sdk 
+npm uninstall @metamask/sdk
 # For React Native, remove
 npm uninstall @metamask/sdk-react
 
@@ -338,25 +352,25 @@ See the [multichain quickstart](../../multichain/quickstart/javascript.md) for a
 
 ## Full option mapping
 
-| Old (`@metamask/sdk`)    | New (`@metamask/connect-evm`)                      | Status                                |
-| ------------------------ | -------------------------------------------------- | ------------------------------------- |
-| `new MetaMaskSDK(opts)`  | `await createEVMClient(opts)`                      | Renamed, async                        |
-| `sdk.init()`             | Not needed                                         | Init happens in `createEVMClient`     |
-| `sdk.connect()`          | `client.connect({ chainIds })`                     | Returns `{ accounts, chainId }`       |
-| `sdk.getProvider()`      | `client.getProvider()`                             | Returns EIP-1193 provider             |
-| `sdk.disconnect()`       | `client.disconnect()`                              | Same, plus partial disconnect support |
-| `dappMetadata`           | `dapp`                                             | Renamed                               |
+| Old (`@metamask/sdk`)    | New (`@metamask/connect-evm`)                                                                               | Status                                |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `new MetaMaskSDK(opts)`  | `await createEVMClient(opts)`                                                                               | Renamed, async                        |
+| `sdk.init()`             | Not needed                                                                                                  | Init happens in `createEVMClient`     |
+| `sdk.connect()`          | `client.connect({ chainIds })`                                                                              | Returns `{ accounts, chainId }`       |
+| `sdk.getProvider()`      | `client.getProvider()`                                                                                      | Returns EIP-1193 provider             |
+| `sdk.disconnect()`       | `client.disconnect()`                                                                                       | Same, plus partial disconnect support |
+| `dappMetadata`           | `dapp`                                                                                                      | Renamed                               |
 | `infuraAPIKey`           | [`getInfuraRpcUrls({ infuraApiKey })`](../reference/methods.md#getinfurarpcurls) in `api.supportedNetworks` | Helper function                       |
-| `readonlyRPCMap`         | `api.supportedNetworks`                            | Merged with Infura URLs               |
-| `headless`               | `ui.headless`                                      | Moved to `ui` namespace               |
-| `extensionOnly`          | `ui.preferExtension`                               | Renamed, slightly different semantics |
-| `openDeeplink`           | `mobile.preferredOpenLink`                         | Moved to `mobile` namespace           |
-| `useDeeplink`            | `mobile.useDeeplink`                               | Moved to `mobile` namespace           |
-| `SDKProvider`            | `EIP1193Provider`                                  | Standard provider interface           |
-| `timer`                  | Removed                                            | —                                    |
-| `enableAnalytics`        | Removed                                            | —                                    |
-| `communicationServerUrl` | Removed                                            | —                                    |
-| `storage`                | Removed                                            | —                                    |
+| `readonlyRPCMap`         | `api.supportedNetworks`                                                                                     | Merged with Infura URLs               |
+| `headless`               | `ui.headless`                                                                                               | Moved to `ui` namespace               |
+| `extensionOnly`          | `ui.preferExtension`                                                                                        | Renamed, slightly different semantics |
+| `openDeeplink`           | `mobile.preferredOpenLink`                                                                                  | Moved to `mobile` namespace           |
+| `useDeeplink`            | `mobile.useDeeplink`                                                                                        | Moved to `mobile` namespace           |
+| `SDKProvider`            | `EIP1193Provider`                                                                                           | Standard provider interface           |
+| `timer`                  | Removed                                                                                                     | —                                     |
+| `enableAnalytics`        | Removed                                                                                                     | —                                     |
+| `communicationServerUrl` | Removed                                                                                                     | —                                     |
+| `storage`                | Removed                                                                                                     | —                                     |
 
 ### React context pattern (replacing `useSDK`)
 

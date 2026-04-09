@@ -1,9 +1,20 @@
 ---
-title: "Dynamic SDK Integration - MetaMask Connect Solana"
+title: 'Dynamic SDK Integration - MetaMask Connect Solana'
 sidebar_label: Dynamic SDK
 description: Integrate MetaMask with Dynamic SDK for Solana dapps, combining wallet discovery UI with cross-platform MetaMask support and social login.
 toc_max_heading_level: 3
-keywords: [connect, MetaMask, Dynamic, SDK, dapp, Wallet SDK, dynamic xyz, solana embedded wallet, social login]
+keywords:
+  [
+    connect,
+    MetaMask,
+    Dynamic,
+    SDK,
+    dapp,
+    Wallet SDK,
+    dynamic xyz,
+    solana embedded wallet,
+    social login,
+  ]
 ---
 
 :::info Heads up

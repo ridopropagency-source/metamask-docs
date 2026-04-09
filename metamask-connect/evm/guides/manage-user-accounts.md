@@ -1,8 +1,24 @@
 ---
-title: "Manage User Accounts - MetaMask Connect EVM"
+title: 'Manage User Accounts - MetaMask Connect EVM'
 sidebar_label: Manage user accounts
 description: Connect wallets, access accounts, listen for changes, and use connectAndSign for single-step authentication in Vanilla JS or Wagmi dapps.
-keywords: [SDK, JavaScript, wagmi, authenticate, connect, sign, accounts, wallet, dapp, eth_requestAccounts, accountsChanged, session management, wallet connection, user authentication]
+keywords:
+  [
+    SDK,
+    JavaScript,
+    wagmi,
+    authenticate,
+    connect,
+    sign,
+    accounts,
+    wallet,
+    dapp,
+    eth_requestAccounts,
+    accountsChanged,
+    session management,
+    wallet connection,
+    user authentication,
+  ]
 toc_max_heading_level: 3
 ---
 

@@ -1,8 +1,20 @@
 ---
-title: "Sign Messages Across Chains - MetaMask Connect Multichain"
+title: 'Sign Messages Across Chains - MetaMask Connect Multichain'
 sidebar_label: Sign messages
 description: Sign messages and typed data on both EVM and Solana chains from a single MetaMask Connect Multichain session using invokeMethod.
-keywords: [multichain, evm, solana, sign, personal_sign, signTypedData, signMessage, invokeMethod, multichain signing, cross-chain signature]
+keywords:
+  [
+    multichain,
+    evm,
+    solana,
+    sign,
+    personal_sign,
+    signTypedData,
+    signMessage,
+    invokeMethod,
+    multichain signing,
+    cross-chain signature,
+  ]
 ---
 
 # Sign messages on EVM and Solana

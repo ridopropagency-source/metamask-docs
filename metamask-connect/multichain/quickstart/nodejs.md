@@ -176,15 +176,15 @@ client.on('wallet_sessionChanged', session => {
 
 ## Multichain client methods at a glance
 
-| Method                                                                           | Description                                                                                   |
-| -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [`connect(scopes, caipAccountIds)`](../reference/methods.md#connect)             | Connects to MetaMask with multichain [scopes](../concepts/scopes.md).                         |
-| [`getSession()`](../reference/methods.md#getsession)                             | Returns the current [session](../concepts/sessions.md) with approved accounts. |
-| [`invokeMethod({ scope, request })`](../reference/methods.md#invokemethod)       | Calls an RPC method on a specific chain using a [scope](../concepts/scopes.md).               |
-| [`disconnect()`](../reference/methods.md#disconnect)                             | Disconnects all [scopes](../concepts/scopes.md) and ends the session.                         |
-| [`disconnect(scopes)`](../reference/methods.md#disconnect)                       | Disconnects specific [scopes](../concepts/scopes.md) without ending the session.              |
-| [`on(event, handler)`](../reference/methods.md#on)                               | Registers an event handler.                                                                   |
-| [`getInfuraRpcUrls({ infuraApiKey })`](../reference/methods.md#getinfurarpcurls) | Generates Infura RPC URLs keyed by CAIP-2 chain ID.                                           |
+| Method                                                                           | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [`connect(scopes, caipAccountIds)`](../reference/methods.md#connect)             | Connects to MetaMask with multichain [scopes](../concepts/scopes.md).            |
+| [`getSession()`](../reference/methods.md#getsession)                             | Returns the current [session](../concepts/sessions.md) with approved accounts.   |
+| [`invokeMethod({ scope, request })`](../reference/methods.md#invokemethod)       | Calls an RPC method on a specific chain using a [scope](../concepts/scopes.md).  |
+| [`disconnect()`](../reference/methods.md#disconnect)                             | Disconnects all [scopes](../concepts/scopes.md) and ends the session.            |
+| [`disconnect(scopes)`](../reference/methods.md#disconnect)                       | Disconnects specific [scopes](../concepts/scopes.md) without ending the session. |
+| [`on(event, handler)`](../reference/methods.md#on)                               | Registers an event handler.                                                      |
+| [`getInfuraRpcUrls({ infuraApiKey })`](../reference/methods.md#getinfurarpcurls) | Generates Infura RPC URLs keyed by CAIP-2 chain ID.                              |
 
 ## Full example
 

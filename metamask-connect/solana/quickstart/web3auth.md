@@ -1,9 +1,21 @@
 ---
-title: "Web3Auth Embedded Wallets - MetaMask Connect Solana"
+title: 'Web3Auth Embedded Wallets - MetaMask Connect Solana'
 sidebar_label: Embedded Wallets SDK
 description: Integrate MetaMask with Web3Auth Embedded Wallets SDK for Solana, enabling email and social login alongside MetaMask wallet support.
 toc_max_heading_level: 3
-keywords: [connect, MetaMask, Embedded Wallets, SDK, dapp, Wallet SDK, web3auth solana, embedded wallet, seedless, social login]
+keywords:
+  [
+    connect,
+    MetaMask,
+    Embedded Wallets,
+    SDK,
+    dapp,
+    Wallet SDK,
+    web3auth solana,
+    embedded wallet,
+    seedless,
+    social login,
+  ]
 ---
 
 :::info Heads up
