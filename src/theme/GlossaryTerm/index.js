@@ -149,11 +149,6 @@ export default function GlossaryTerm({
           }
         >
           <strong>{term}</strong> {effectiveDefinition}
-          {isTouch && (
-            <a href={glossaryHref} className={styles.tooltipLink}>
-              View in glossary →
-            </a>
-          )}
         </span>
       )}
     </span>

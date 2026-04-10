@@ -67,18 +67,6 @@
   border-color: var(--ifm-color-emphasis-400);
 }
 
-.tooltipLink {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.85em;
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-}
-
-.tooltipLink:hover {
-  text-decoration: underline;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .tooltip {
