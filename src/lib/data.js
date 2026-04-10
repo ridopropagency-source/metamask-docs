@@ -42,6 +42,11 @@ export const NETWORK_LINKS = [
     logo: `${LOGO_PATH}/logo-hemi.svg`,
   },
   {
+    name: 'HyperEVM',
+    href: '/services/reference/hyperevm',
+    logo: `${LOGO_PATH}/logo-hyperevm.svg`,
+  },
+  {
     name: 'IPFS',
     href: '/services/reference/ipfs',
     logo: `${LOGO_PATH}/logo-ipfs.svg`,
@@ -105,11 +110,6 @@ export const NETWORK_LINKS = [
     name: 'Starknet',
     href: '/services/reference/starknet',
     logo: `${LOGO_PATH}/logo-starknet.svg`,
-  },
-  {
-    name: 'Swellchain',
-    href: '/services/reference/swellchain',
-    logo: `${LOGO_PATH}/logo-swellchain.png`,
   },
   {
     name: 'Unichain',
@@ -197,6 +197,12 @@ export const API_COSTS = {
     eth_newBlockFilter: 80,
     eth_newFilter: 80,
     eth_uninstallFilter: 80,
+  },
+  hyperevm: {
+    eth_bigBlockGasPrice: 80,
+    eth_usingBigBlocks: 80,
+    eth_getSystemTxsByBlockNumber: 80,
+    eth_getSystemTxsByBlockHash: 80,
   },
   megaeth: {
     eth_callMany: 80,

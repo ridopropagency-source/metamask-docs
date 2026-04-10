@@ -5,7 +5,7 @@ keywords: [MetaMask, smart accounts, account abstraction, ERC-4337]
 
 # MetaMask Smart Accounts
 
-The Smart Accounts Kit enables you to create and manage *MetaMask Smart Accounts*.
+The Smart Accounts Kit enables you to create and manage MetaMask Smart Accounts.
 MetaMask Smart Accounts are [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337) smart contract accounts
 that support programmable account behavior and advanced features such as multi-signature approvals,
 automated transaction batching, and custom security policies.
@@ -92,4 +92,4 @@ The MetaMask Smart Accounts flow is as follows:
 
 Delegator accounts are a type of MetaMask smart account that allows users to grant permission to other smart accounts or EOAs
 to perform specific executions on their behalf, under defined rules and restrictions.
-Learn more about [delegation](delegation/index.md).
+Learn more about [delegation](delegation/overview.md).

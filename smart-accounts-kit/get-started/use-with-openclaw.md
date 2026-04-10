@@ -1,22 +1,24 @@
 ---
 sidebar_label: Use with OpenClaw
 description: Use the MetaMask Smart Accounts Kit skill with OpenClaw to build and deploy applications with smart accounts support.
+toc_max_heading_level: 2
 keywords: [openclaw, skill, delegation, smart accounts, ai, metamask smart accounts kit]
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import GlossaryTerm from '@theme/GlossaryTerm';
 
 # Use the Smart Accounts Kit with OpenClaw
 
 Use the MetaMask Smart Accounts Kit [OpenClaw skills](https://docs.openclaw.ai/tools/skills) to interact with the Smart Accounts Kit using natural language prompts.
 
 [OpenClaw](https://openclaw.ai/) is an open-source platform for AI agents that enables you to build, deploy, and
-manage AI assistants with access to various tools and skills. The Smart Accounts Kit provides the below two skills.
+manage AI assistants with access to various tools and skills. The Smart Accounts Kit provides the following two skills.
 
 ## Gator CLI skill
 
-This skill enables your agent to grant, redeem, inspect and revoke ERC-7710 delegations using the [@metamask/gator-cli](https://www.npmjs.com/package/@metamask/gator-cli) package.
+This skill enables your agent to grant, redeem, inspect, and revoke ERC-7710 <GlossaryTerm term="Delegation">delegations</GlossaryTerm> using the [`@metamask/gator-cli`](https://www.npmjs.com/package/@metamask/gator-cli) package.
 
 :::warning Alpha version
 
@@ -98,6 +100,6 @@ The skill provides access to the following capabilities:
 
 | Capability | Description |
 |------------|-------------|
-| [`Smart accounts`](https://github.com/smartgator/smart-accounts-kit-skills/blob/main/references/smart-accounts.md) | Helps you integrate MetaMask smart accounts to support batch transactions, multi-sig signatures, and gas sponsorship. |
-| [`Delegation`](https://github.com/smartgator/smart-accounts-kit-skills/blob/main/references/delegations.md) | Helps you integrate delegations with scopes and caveats. |
-| [`Advanced Permissions`](https://github.com/smartgator/smart-accounts-kit-skills/blob/main/references/advanced-permissions.md) | Helps you integrate Advanced Permissions. |
+| [Smart accounts](https://github.com/smartgator/smart-accounts-kit-skills/blob/main/references/smart-accounts.md) | Helps you integrate MetaMask Smart Accounts to support batch transactions, multi-sig signatures, and gas sponsorship. |
+| [Delegation](https://github.com/smartgator/smart-accounts-kit-skills/blob/main/references/delegations.md) | Helps you integrate delegations with scopes and caveats. |
+| [Advanced Permissions](https://github.com/smartgator/smart-accounts-kit-skills/blob/main/references/advanced-permissions.md) | Helps you integrate Advanced Permissions. |

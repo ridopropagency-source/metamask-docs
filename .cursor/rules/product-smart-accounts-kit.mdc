@@ -1,0 +1,85 @@
+---
+description: Product-specific guidance for Smart Accounts Kit documentation, including terminology, delegation concepts, glossary/tooltips, and versioning.
+globs:
+  [
+    'smart-accounts-kit/**/*.md',
+    'smart-accounts-kit/**/*.mdx',
+    'src/lib/glossary.json',
+    'scripts/generate-smart-accounts-glossary.js',
+  ]
+alwaysApply: false
+---
+
+# Smart Accounts Kit
+
+## Product naming
+
+- The product name is **MetaMask Smart Accounts Kit**. Use **Smart Accounts Kit** as short form in prose.
+- When referring to an actual account, use "MetaMask smart account" (singular) or "MetaMask Smart Accounts" (plural, capitalized) on first use, and "smart account" or "smart accounts" on subsequent uses.
+- Do not use "smart contract account" or "SCA" unless directly quoting
+  an ERC specification.
+- The code-level type is `MetaMaskSmartAccount` (backtick it on first use in a page).
+- **Externally owned account (EOA)** on first use, then **EOA**.
+
+## Key concepts
+
+Smart Accounts Kit has three pillars. Use these terms consistently:
+
+- **Smart accounts**: ERC-4337 accounts with delegated permissions, multisig, and gas abstraction.
+- **Delegation**: rule-based permission sharing powered by the
+  [Delegation Framework](https://github.com/MetaMask/delegation-framework). Key terms:
+  - **delegator account** (grants permission) and **delegate account** (receives permission).
+  - **root delegation**, **open root delegation**, **redelegation**, **open redelegation**.
+  - **delegation scopes** (a Smart Accounts Kit abstraction on top of caveat enforcers).
+  - **caveat enforcers** (on-chain restriction contracts).
+- **Advanced Permissions (ERC-7715)**: fine-grained, human-readable permissions granted through the MetaMask
+  extension. Distinct from regular delegations (which cannot be granted through the extension).
+
+## Content organization
+
+| Folder             | Content type                                            |
+| ------------------ | ------------------------------------------------------- |
+| `concepts/`        | Explanation (smart accounts, delegation, permissions)   |
+| `get-started/`     | Quickstart and setup (install, CLI, supported networks) |
+| `guides/`          | How-to (create/deploy accounts, send ops, delegate)     |
+| `reference/`       | API reference (methods, types, parameters)              |
+| `troubleshooting/` | Problem/solution (error codes, common issues)           |
+
+## Reference conventions
+
+- Method headings use backtick-wrapped names (for example, `## \`createDelegation\``).
+- Parameters use tables with columns: Name, Type, Required, Description.
+- Code examples use `typescript` fences. Many pages use Docusaurus `Tabs`/`TabItem` for
+  multi-file examples.
+- Types and enums link to `reference/types.md`.
+
+## Glossary and tooltips
+
+### Glossary page (`reference/glossary.mdx`)
+
+- **Source of truth:** Add or update definitions in [`src/lib/glossary.json`](src/lib/glossary.json). Each entry needs a `term` string and a `definition` string.
+- **Generated file:** [`smart-accounts-kit/reference/glossary.mdx`](smart-accounts-kit/reference/glossary.mdx) is **auto-generated**. Do not edit it by hand.
+- **Regeneration:** Run `npm run glossary:generate`, or use `npm start` / `npm run build` (both run the glossary script first). The generator is [`scripts/generate-smart-accounts-glossary.js`](scripts/generate-smart-accounts-glossary.js).
+
+The `term` string in each glossary entry must match exactly what you pass to the `term` prop on `GlossaryTerm` (see below).
+
+### Inline tooltips (`GlossaryTerm`)
+
+- Import the theme component: `import GlossaryTerm from '@theme/GlossaryTerm';`
+- Wrap visible text and set `term` to the matching glossary `term` string, for example:
+  `<GlossaryTerm term="User operation">user operations</GlossaryTerm>` or
+  `<GlossaryTerm term="MetaMask smart account" />` when the displayed label matches the glossary term.
+- Example page: [`smart-accounts-kit/get-started/smart-account-quickstart/index.md`](smart-accounts-kit/get-started/smart-account-quickstart/index.md).
+
+There is no strict rule for when to add tooltips. In practice, use them when a term appears for the first time in a documentation section and readers benefit from a short definition, but the term does **not** warrant linking out to a full concept or guide page. Tooltips add context without the extra step of opening another page.
+
+## Versioning
+
+Smart Accounts Kit uses Docusaurus versioning. The current development version is at path
+`/smart-accounts-kit/development/`. Snapshot versions live in `gator_versioned_docs/` (excluded
+from `.cursorignore`). Do not edit versioned snapshots directly.
+
+## Sidebar
+
+The sidebar configuration is in [gator-sidebar.js](gator-sidebar.js). Tutorial entries link to
+shared site tutorials under `/tutorials/`, not to pages inside `smart-accounts-kit/`.

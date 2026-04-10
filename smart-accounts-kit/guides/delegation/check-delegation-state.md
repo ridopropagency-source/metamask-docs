@@ -7,6 +7,7 @@ keywords: [delegation, state, caveat enforcer, delegation scope]
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import GlossaryTerm from '@theme/GlossaryTerm';
 
 # Check the delegation state
 
@@ -19,15 +20,15 @@ Use the `CaveatEnforcerClient` to check the available balances for specific scop
 
 ## Prerequisites
 
-- [Install and set up the Smart Accounts Kit](../../get-started/install.md)
-- [Create a delegator account](execute-on-smart-accounts-behalf.md#3-create-a-delegator-account)
-- [Create a delegate account](execute-on-smart-accounts-behalf.md#4-create-a-delegate-account)
-- [Create a delegation with an ERC-20 periodic scope](use-delegation-scopes/spending-limit.md#erc-20-periodic-scope)
+- [Install and set up the Smart Accounts Kit.](../../get-started/install.md)
+- [Create a delegator account.](execute-on-smart-accounts-behalf.md#3-create-a-delegator-account)
+- [Create a delegate account.](execute-on-smart-accounts-behalf.md#4-create-a-delegate-account)
+- [Create a delegation with an ERC-20 periodic scope.](use-delegation-scopes/spending-limit.md#erc-20-periodic-scope)
 
 ## Create a `CaveatEnforcerClient`
 
 To check the delegation state, create a [`CaveatEnforcerClient`](../../reference/delegation/caveat-enforcer-client.md).
-This client allows you to interact with the caveat enforcers of the delegation, and read the required state.
+This client allows you to interact with the <GlossaryTerm term="Caveat enforcer">caveat enforcers</GlossaryTerm> of the delegation, and read the required state.
 
 <Tabs>
 <TabItem value="example.ts">

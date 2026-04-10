@@ -6,24 +6,25 @@ keywords: [execution, smart account, create, redeem, delegation, delegator, dele
 
 import Tabs from "@theme/Tabs"; 
 import TabItem from "@theme/TabItem";
+import GlossaryTerm from '@theme/GlossaryTerm';
 
 # Perform executions on a smart account's behalf
 
-[Delegation](../../concepts/delegation/index.md) is the ability for a [MetaMask smart account](../../concepts/smart-accounts.md) to grant permission to another account to perform executions on its behalf.
+[Delegation](../../concepts/delegation/overview.md) is the ability for a [MetaMask smart account](../../concepts/smart-accounts.md) to grant permission to another account to perform executions on its behalf.
 
 In this guide, you'll create a delegator account (Alice) and a delegate account (Bob), and grant Bob permission to perform executions on Alice's behalf.
 You'll complete the delegation lifecycle (create, sign, and redeem a delegation).
 
 ## Prerequisites
 
-[Install and set up the Smart Accounts Kit](../../get-started/install.md)
+[Install and set up the Smart Accounts Kit.](../../get-started/install.md)
 
 ## Steps
 
-### 1. Create a Public Client
+### 1. Set up a Public Client
 
-Create a [Viem Public Client](https://viem.sh/docs/clients/public) using Viem's `createPublicClient` function.
-You will configure Alice's account (the delegator) and the Bundler Client with the Public Client, which you can use to query the signer's account state and interact with smart contracts.
+Set up a Public Client using Viem's [`createPublicClient`](https://viem.sh/docs/clients/public) function.
+You will configure Alice's account (the <GlossaryTerm term="Delegator account">delegator</GlossaryTerm>) and the Bundler Client with the Public Client, which you can use to query the signer's account state and interact with smart contracts.
 
 ```typescript
 import { createPublicClient, http } from "viem"
@@ -35,10 +36,10 @@ const publicClient = createPublicClient({
 })
 ```
 
-### 2. Create a Bundler Client
+### 2. Set up a Bundler Client
 
-Create a [Viem Bundler Client](https://viem.sh/account-abstraction/clients/bundler) using Viem's `createBundlerClient` function.
-You can use the bundler service to estimate gas for user operations and submit transactions to the network.
+Set up a Bundler Client using Viem's [`createBundlerClient`](https://viem.sh/account-abstraction/clients/bundler) function.
+You can use the <GlossaryTerm term="Bundler">bundler</GlossaryTerm> service to estimate gas for <GlossaryTerm term="User operation">user operations</GlossaryTerm> and submit transactions to the network.
 
 ```typescript
 import { createBundlerClient } from "viem/account-abstraction"
@@ -51,11 +52,11 @@ const bundlerClient = createBundlerClient({
 
 ### 3. Create a delegator account
 
-Create an account to represent Alice, the delegator who will create a delegation.
-The delegator must be a MetaMask smart account; use the toolkit's [`toMetaMaskSmartAccount`](../../reference/smart-account.md#tometamasksmartaccount) method to create the delegator account.
+Create an account to represent Alice, the <GlossaryTerm term="Delegator account">delegator</GlossaryTerm> who will create a delegation.
+The delegator must be a <GlossaryTerm term="MetaMask smart account" />; use the toolkit's [`toMetaMaskSmartAccount`](../../reference/smart-account.md#tometamasksmartaccount) method to create the delegator account.
 
-A Hybrid smart account is a flexible smart account implementation that supports both an externally owned account (EOA) owner and any number of P256 (passkey) signers.
-This examples configures a [Hybrid smart account with an Account signer](../smart-accounts/create-smart-account.md#create-a-hybrid-smart-account-with-an-account-signer):
+This example configures a Hybrid smart account,
+which is a flexible smart account implementation that supports both an <GlossaryTerm term="Externally owned account (EOA)">EOA</GlossaryTerm> owner and any number of <GlossaryTerm term="Passkey">passkey</GlossaryTerm> (WebAuthn) signers:
 
 ```typescript
 import { Implementation, toMetaMaskSmartAccount } from "@metamask/smart-accounts-kit"
@@ -78,7 +79,7 @@ See [how to configure other smart account types](../smart-accounts/create-smart-
 
 ### 4. Create a delegate account
 
-Create an account to represent Bob, the delegate who will receive the delegation. The delegate can be a smart account or an externally owned account (EOA):
+Create an account to represent Bob, the <GlossaryTerm term="Delegate account">delegate</GlossaryTerm> who will receive the delegation. The delegate can be a <GlossaryTerm term="MetaMask smart account">smart account</GlossaryTerm> or an <GlossaryTerm term="Externally owned account (EOA)">EOA</GlossaryTerm>:
 
 <Tabs>
 <TabItem value="Smart account">
@@ -120,7 +121,7 @@ export const delegateWalletClient = createWalletClient({
 
 ### 5. Create a delegation
 
-Create a [root delegation](../../concepts/delegation/index.md#delegation-types) from Alice to Bob.
+Create a [root delegation](../../concepts/delegation/overview.md#root-delegation) from Alice to Bob.
 With a root delegation, Alice is delegating her own authority away, as opposed to *redelegating* permissions she received from a previous delegation.
 
 Use the toolkit's [`createDelegation`](../../reference/delegation/index.md#createdelegation) method to create a root delegation. When creating 
@@ -175,9 +176,9 @@ const signedDelegation = {
 Bob can now redeem the delegation. The redeem transaction is sent to the `DelegationManager` contract, which validates the delegation and executes actions on Alice's behalf.
 
 To prepare the calldata for the redeem transaction, use the [`redeemDelegations`](../../reference/delegation/index.md#redeemdelegations) method from `DelegationManager`.
-Since Bob is redeeming a single delegation chain, use the [`SingleDefault`](../../concepts/delegation/index.md#execution-modes) execution mode.
+Since Bob is redeeming a single delegation chain, use the [`SingleDefault`](../../concepts/delegation/delegation-manager.md#execution-modes) execution mode.
 
-Bob can redeem the delegation by submitting a user operation if his account is a smart account, or a regular transaction if his account is an EOA. In this example, Bob transfers 1 USDC from Alice’s account to his own.
+Bob can redeem the delegation by submitting a <GlossaryTerm term="User operation">user operation</GlossaryTerm> if his account is a smart account, or a regular transaction if his account is an EOA. In this example, Bob transfers 1 USDC from Alice's account to his own.
 
 <Tabs>
 <TabItem value="Redeem with a smart account">

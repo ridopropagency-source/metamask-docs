@@ -128,6 +128,8 @@ const sidebar = {
   overview: [
     { type: "doc", id: "README", label: "About" },
     { type: "doc", id: "get-started", label: "Get Started" },
+    { type: "doc", id: "architecture", label: "Architecture" },
+    "build-with-ai",
     {
       type: "category",
       label: "Choose your platform",
@@ -175,7 +177,7 @@ const sidebar = {
         "infrastructure/glossary",
         {
           type: "link",
-          label: "Compliance, audits & trust", 
+          label: "Compliance, audits & trust",
           href: "https://trust.web3auth.io",
         },
       ],

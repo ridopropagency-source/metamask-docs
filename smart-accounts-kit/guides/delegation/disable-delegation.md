@@ -7,10 +7,11 @@ keywords: [delegation, disable, revoke]
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import GlossaryTerm from '@theme/GlossaryTerm';
 
 # Disable a delegation
 
-Delegations are created off-chain and can be stored anywhere, but you can disable a delegation on-chain using the
+Delegations are created offchain and can be stored anywhere, but you can disable a delegation onchain using the
 toolkit. When a delegation is disabled, any attempt to redeem it will revert, effectively revoking the permissions 
 that were previously granted.
 
@@ -20,16 +21,16 @@ delegation, the transaction will revert, preventing him from spending Alice's US
 
 ## Prerequisites
 
-- [Install and set up the Smart Accounts Kit](../../get-started/install.md)
-- [Create a delegator account](execute-on-smart-accounts-behalf.md#3-create-a-delegator-account)
-- [Create a delegate account](execute-on-smart-accounts-behalf.md#4-create-a-delegate-account)
+- [Install and set up the Smart Accounts Kit.](../../get-started/install.md)
+- [Create a delegator account.](execute-on-smart-accounts-behalf.md#3-create-a-delegator-account)
+- [Create a delegate account.](execute-on-smart-accounts-behalf.md#4-create-a-delegate-account)
 
 
 ## Disable a delegation
 
 To disable a delegation, you can use the [`disableDelegation`](../../reference/delegation/index.md#disabledelegation) utility function from the 
 toolkit to generate calldata. Once the calldata is prepared, you can send it to the
-Delegation Manager to disable the delegation. 
+<GlossaryTerm term="Delegation Manager" /> to disable the delegation. 
 
 <Tabs>
 <TabItem value="example.ts">

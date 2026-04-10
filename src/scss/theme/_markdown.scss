@@ -107,12 +107,21 @@
   }
 
   code {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: var(--inline-code-padding);
+    font-family: var(--inline-code-font);
+    background-color: var(--ifm-code-background);
+    border: none;
+    box-shadow: none;
+    border-radius: var(--inline-code-border-radius);
   }
 
-  p
-    + .codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Container-styles-module {
+  pre code,
+  [class*='codeBlockContainer'] code {
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  p + [class*='codeBlockContainer'] {
     margin-top: 1rem;
   }
 
@@ -129,8 +138,10 @@
   table td > code,
   table th > code,
   span > code {
-    @extend .font-mm-sans-mono;
-    font-size: 80%;
+    font-size: var(--inline-code-font-size);
+    font-weight: var(--inline-code-font-weight);
+    position: relative;
+    top: var(--inline-code-baseline-nudge);
   }
 
   table {
@@ -188,7 +199,7 @@
       }
     }
 
-    .collapsibleContent_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
+    [class*='collapsibleContent'] {
       border-top: 1px solid var(--ifm-code-background);
       margin-top: 2rem;
       padding-top: 2rem;
@@ -198,11 +209,13 @@
     code {
       @extend .type-paragraph-s;
       color: var(--ifm-heading-color) !important;
-      background: var(--ifm-code-background);
-
-      [data-theme='dark'] & {
-        background-color: var(--general-gray-dark);
-      }
+      background-color: var(--ifm-code-background);
+      border: none;
+      border-radius: var(--inline-code-border-radius);
+      font-size: var(--inline-code-font-size);
+      font-weight: var(--inline-code-font-weight);
+      position: relative;
+      top: var(--inline-code-baseline-nudge);
     }
 
     table tr:nth-child(2n) {
@@ -210,7 +223,7 @@
     }
   }
 
-  .details_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module > summary {
+  [class*='details'] > summary {
     padding-left: 1.6rem;
     font-family: var(--ifm-heading-font-family);
     &::before {

@@ -7,6 +7,7 @@ keywords: [constrain, restrict, scope, caveat, caveat enforcer]
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import GlossaryTerm from '@theme/GlossaryTerm';
 
 # Constrain a delegation scope
 
@@ -15,7 +16,7 @@ You can further constrain these scopes and limit the delegation's authority by a
 
 ## Prerequisites
 
-[Configure a delegation scope](index.md)
+[Configure a delegation scope.](index.md)
 
 ## Apply a caveat enforcer
 

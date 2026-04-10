@@ -10,6 +10,8 @@ toc_max_heading_level: 4
 discourseTopicId: 2601
 ---
 
+import GlossaryTerm from '@theme/GlossaryTerm';
+
 This tutorial walks you through creating an invite link so users can refer their friends to your dapp with minimal friction.
 
 For example, Alice (the inviter) wants Bob (the invitee) to try out your dapp.
@@ -20,7 +22,7 @@ You'll enable this by:
 
 - Adding an [embedded wallet](/embedded-wallets) for instant onboarding.
 - Creating a [MetaMask smart account](/smart-accounts-kit/concepts/smart-accounts) to create and redeem an invitation.
-- Creating an [open delegation](/smart-accounts-kit/concepts/delegation) to represent an invitation.
+- Creating an [open delegation](/smart-accounts-kit/concepts/delegation/overview) to represent an invitation.
 
 ## Prerequisites
 
@@ -110,12 +112,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 }
 ```
 
-### 2. Create a Bundler Client
+### 2. Set up a Bundler Client
 
-Create a [Viem Bundler Client](https://viem.sh/account-abstraction/clients/bundler) using Viem's `createBundlerClient` function.
-You can use the bundler service to estimate gas for user operations and submit transactions to the network.
+Set up a Bundler Client using Viem's [`createBundlerClient`](https://viem.sh/account-abstraction/clients/bundler) function.
+You can use the <GlossaryTerm term="Bundler">bundler</GlossaryTerm> service to estimate gas for user operations and submit transactions to the network.
 
-Set `paymaster` to `true` to use the Pimlico paymaster with the Bundler Client, and replace `<YOUR-API-KEY>` with your Pimlico API key:
+Set `paymaster` to `true` to use the Pimlico <GlossaryTerm term="Paymaster">paymaster</GlossaryTerm> with the Bundler Client, and replace `<YOUR-API-KEY>` with your Pimlico API key:
 
 ```tsx
 import { createBundlerClient } from 'viem/account-abstraction';
@@ -134,7 +136,7 @@ const bundlerClient = createBundlerClient({
 
 Create an account to create and redeem an invitation.
 This account will create a delegation, and must be a [MetaMask smart account](/smart-accounts-kit/concepts/smart-accounts).
-This example uses a [Hybrid smart account](/smart-accounts-kit/guides/smart-accounts/create-smart-account/#create-a-hybrid-smart-account), which is a flexible smart account implementation that supports both an externally owned account (EOA) owner and any number of passkey (WebAuthn) signers:
+This example uses a [Hybrid smart account](/smart-accounts-kit/guides/smart-accounts/create-smart-account/#hybrid-smart-account), which is a flexible smart account implementation that supports both an <GlossaryTerm term="Externally owned account (EOA)">EOA</GlossaryTerm> owner and any number of <GlossaryTerm term="Passkey">passkey</GlossaryTerm> (WebAuthn) signers:
 
 ```tsx
 import { Implementation, toMetaMaskSmartAccount } from '@metamask/smart-accounts-kit';
@@ -157,7 +159,7 @@ const smartAccount = await toMetaMaskSmartAccount({
 
 #### 4.1. Deploy the account
 
-To create an invitation, first deploy the smart account by sending a user operation:
+To create an invitation, first deploy the smart account by sending a <GlossaryTerm term="User operation">user operation</GlossaryTerm>:
 
 ```ts
 import { zeroAddress } from 'viem';
@@ -184,7 +186,7 @@ You can use the [MetaMask faucet](/developer-tools/faucet) to get Sepolia ETH.
 
 #### 4.3. Create an open root delegation
 
-Create an [open root delegation](/smart-accounts-kit/concepts/delegation) to represent an invitation.
+Create an [open root delegation](/smart-accounts-kit/concepts/delegation/overview) to represent an invitation.
 A root delegation is the first delegation in a chain of delegations, and an open root delegation grants permission to any account.
 In this example, the inviter creates an invitation that can be redeemed by any invitee, allowing the invitee to spend up to 0.001 ETH.
 
@@ -260,10 +262,10 @@ const decodedDelegation = decodeDelegation(encodedDelegation);
 
 #### 5.2. Redeem the delegation
 
-[Redeem the delegation](/smart-accounts-kit/guides/delegation/execute-on-smart-accounts-behalf/#7-redeem-the-delegation) by submitting a user operation from the smart account to the `DelegationManager` contract.
+[Redeem the delegation](/smart-accounts-kit/guides/delegation/execute-on-smart-accounts-behalf/#7-redeem-the-delegation) by submitting a <GlossaryTerm term="User operation">user operation</GlossaryTerm> from the smart account to the `DelegationManager` contract.
 Submitting the user operation deploys the account for first-time users.
 
-The delegation manager validates the delegation and executes delegated actions.
+The <GlossaryTerm term="Delegation Manager" /> validates the delegation and executes delegated actions.
 In this case, the invitee can spend up to 0.001 ETH when using your dapp.
 
 ```ts
@@ -302,4 +304,4 @@ const userOperationHash = await bundlerClient.sendUserOperation({
 - See [`invitation-link-example`](https://github.com/MetaMask/gator-examples/tree/feat/invitation-link-example/examples/invitation-link-example) on GitHub for a complete example dapp.
 - When creating an invitation, you can add more rules and restrictions using [delegation scopes](/smart-accounts-kit/guides/delegation/use-delegation-scopes) and [caveat enforcers](/smart-accounts-kit/guides/delegation/use-delegation-scopes/constrain-scope).
 - Learn more about [smart account implementations](/smart-accounts-kit/guides/smart-accounts/create-smart-account).
-- Learn more about [delegation types](/smart-accounts-kit/concepts/delegation/#delegation-types).
+- Learn more about [delegation types](/smart-accounts-kit/concepts/delegation/overview/#delegation-types).

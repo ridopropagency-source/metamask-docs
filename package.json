@@ -5,8 +5,9 @@
   "license": "(MIT OR Apache-2.0)",
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start -p 3003",
-    "build": "docusaurus build",
+    "start": "npm run glossary:generate && docusaurus snaps:generate && docusaurus start -p 3003",
+    "build": "npm run glossary:generate && docusaurus snaps:generate && docusaurus build",
+    "glossary:generate": "node ./scripts/generate-smart-accounts-glossary.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -30,6 +31,7 @@
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^14.2.0",
     "@docusaurus/core": "3.9.2",
+    "@docusaurus/plugin-client-redirects": "3.9.2",
     "@docusaurus/plugin-content-docs": "3.9.2",
     "@docusaurus/plugin-content-pages": "3.9.2",
     "@docusaurus/plugin-google-gtag": "3.9.2",
@@ -54,6 +56,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "copy-to-clipboard": "^3.3.3",
+    "docusaurus-plugin-llms": "^0.2.2",
     "docusaurus-plugin-sass": "^0.2.5",
     "dotenv": "^17.2.1",
     "ethers": "^6.15.0",
@@ -73,6 +76,7 @@
     "react-dom": "^18.0.0",
     "react-dropdown-select": "^4.12.2",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
     "react-modal": "^3.16.3",
     "react-player": "^3.3.1",
     "react-select": "^5.10.2",
@@ -82,14 +86,13 @@
     "rehype-katex": "^7.0.1",
     "remark-codesandbox": "^0.10.1",
     "remark-docusaurus-tabs": "^0.2.0",
+    "remark-gfm": "^4.0.1",
     "remark-math": "^6.0.0",
-    "sass": "^1.93.0",
-    "docusaurus-plugin-llms": "^0.2.2"
+    "sass": "^1.93.0"
   },
   "devDependencies": {
     "@docusaurus/eslint-plugin": "3.9.2",
     "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/plugin-client-redirects": "3.9.2",
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
     "@eslint/js": "^9.39.2",

@@ -209,13 +209,25 @@
     },
     {
       "type": "category",
+      "label": "Troubleshooting",
+      "collapsed": true,
+      "items": [
+        "troubleshooting/aa21-prefund",
+        "troubleshooting/allowance-exceeded",
+        "troubleshooting/error-codes",
+        "troubleshooting/invalid-delegate",
+        "troubleshooting/invalid-delegator",
+        "troubleshooting/invalid-signature",
+        "troubleshooting/user-operation-reverted"
+      ]
+    },
+    {
+      "type": "category",
       "label": "Changelog",
       "collapsed": false,
       "items": [
         "changelog/0.3.0",
-        "changelog/0.2.0",
-        "changelog/0.1.0",
-        "changelog/0.13.0"
+        "changelog/0.2.0"
       ]
     }
   ]

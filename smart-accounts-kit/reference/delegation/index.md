@@ -6,14 +6,15 @@ keywords: [delegation, API, methods, reference]
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import GlossaryTerm from '@theme/GlossaryTerm';
 
 # Delegation API reference
 
-The following API methods are related to creating and managing [delegations](../../concepts/delegation/index.md).
+The following API methods are related to creating and managing [delegations](../../concepts/delegation/overview.md).
 
 ## `createCaveatBuilder`
 
-Builds an array of caveats.
+Builds an array of <GlossaryTerm term="Caveat">caveats</GlossaryTerm>.
 
 ### Parameters
 
@@ -52,7 +53,7 @@ const caveatBuilder = createCaveatBuilder(environment, {
 
 ## `createDelegation`
 
-Creates a delegation with a specific delegate.
+Creates a delegation with a specific <GlossaryTerm term="Delegate account">delegate</GlossaryTerm>.
 
 ### Parameters
 
@@ -61,7 +62,7 @@ Creates a delegation with a specific delegate.
 | `from` | `Hex` | Yes | The address that is granting the delegation. |
 | `to` | `Hex` | Yes | The address to which the delegation is being granted. |
 | `scope` | `ScopeConfig` | Yes | The scope of the delegation that defines the initial authority. See [delegation scopes](./delegation-scopes.md) for the full list of scope types and their parameters. |
-| `environment` | [`SmartAccountsEnvironment`](../types.md#smartaccountsenvironment) | Yes | The environment used by the toolkit to define contract addresses for interacting with the Delegation Framework contracts. |
+| `environment` | [`SmartAccountsEnvironment`](../types.md#smartaccountsenvironment) | Yes | The environment used by the toolkit to define contract addresses for interacting with the <GlossaryTerm term="Delegation Framework" /> contracts. |
 | `caveats` | `Caveats` | No | Caveats that further refine the authority granted by the `scope`. See [caveats reference](./caveats.md) for the full list of caveat types and their parameters. |
 | `parentDelegation` | [`Delegation`](../types.md#delegation) \| `Hex` | No | The parent delegation or its corresponding hex to create a delegation chain. |
 | `salt` | `Hex` | No | The salt for generating the delegation hash. This helps prevent hash collisions when creating identical delegations. |
@@ -90,7 +91,7 @@ const delegation = createDelegation({
 
 ## `createOpenDelegation`
 
-Creates an open delegation that can be redeemed by any delegate.
+Creates an <GlossaryTerm term="Open delegation">open delegation</GlossaryTerm> that can be redeemed by any delegate.
 
 ### Parameters
 
@@ -98,7 +99,7 @@ Creates an open delegation that can be redeemed by any delegate.
 | ---- | ---- | -------- | ----------- |
 | `from` | `Hex` | Yes | The address that is granting the delegation. |
 | `scope` | `ScopeConfig` | Yes | The scope of the delegation that defines the initial authority. See [delegation scopes](./delegation-scopes.md) for the full list of scope types and their parameters. |
-| `environment` | [`SmartAccountsEnvironment`](../types.md#smartaccountsenvironment) | Yes | The environment used by the toolkit to define contract addresses for interacting with the Delegation Framework contracts. |
+| `environment` | [`SmartAccountsEnvironment`](../types.md#smartaccountsenvironment) | Yes | The environment used by the toolkit to define contract addresses for interacting with the <GlossaryTerm term="Delegation Framework" /> contracts. |
 | `caveats` | `Caveats` | No | Caveats that further refine the authority granted by the `scope`. See [caveats reference](./caveats.md) for the full list of caveat types and their parameters. |
 | `parentDelegation` | [`Delegation`](../types.md#delegation) \| `Hex` | No | The parent delegation or its corresponding hex to create a delegation chain. |
 | `salt` | `Hex` | No | The salt for generating the delegation hash. This helps prevent hash collisions when creating identical delegations. |
@@ -195,7 +196,7 @@ const delegation = decodeDelegation("0x7f0db33d..c06aeeac");
 
 ## `deploySmartAccountsEnvironment`
 
-Deploys the Delegation Framework contracts to an EVM chain.
+Deploys the <GlossaryTerm term="Delegation Framework" /> contracts to an EVM chain.
 
 ### Parameters
 
@@ -325,6 +326,26 @@ export const delegation = createDelegation({
 
 </TabItem>
 </Tabs>
+
+## `enableDelegation`
+
+Encodes the calldata to enable a disabled delegation. 
+
+### Parameters
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `delegation` | [`Delegation`](../types.md#delegation) | Yes | The delegation to be enabled. |
+
+### Example
+
+```ts
+import { DelegationManager } from "@metamask/smart-accounts-kit/contracts";
+
+const enableDelegationData = DelegationManager.encode.enableDelegation({
+  delegation, // Already disabled delegation.
+});
+```
 
 ## `encodeDelegations`
 
@@ -481,7 +502,7 @@ Resolves the `SmartAccountsEnvironment` for a chain.
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `chainId` | `number` | Yes | The chain ID of the network for which the `SmartAccountsEnvironment` should be resolved. |
-| `version` | `SupportedVersion` | No | Specifies the version of the Delegation Framework contracts to use. If omitted, the latest supported version will be used by default. |
+| `version` | `SupportedVersion` | No | Specifies the version of the <GlossaryTerm term="Delegation Framework" /> contracts to use. If omitted, the latest supported version will be used by default. |
 
 ### Example
 
@@ -501,7 +522,7 @@ Overrides or adds the `SmartAccountsEnvironment` for a chain and supported versi
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | `chainId` | `number` | Yes | The chain ID of the network for which the `SmartAccountsEnvironment` should be overridden. |
-| `version` | `SupportedVersion` | Yes | The version of the Delegation Framework contracts to override for the specified chain. |
+| `version` | `SupportedVersion` | Yes | The version of the <GlossaryTerm term="Delegation Framework" /> contracts to override for the specified chain. |
 | `environment` | [`SmartAccountsEnvironment`](../types.md#smartaccountsenvironment) | Yes | The environment containing contract addresses to override for the given chain and version. |
 
 ### Example
@@ -549,12 +570,12 @@ This method supports batch redemption, allowing multiple delegations to be proce
 | Name | Type | Required | Description |
 | --- | --- | --- | --- |
 | `delegations` | [`Delegation`](../types.md#delegation)`[][]` | Yes | A nested collection representing chains of delegations. Each inner collection contains a chain of delegations to be redeemed. |
-| `modes` | [`ExecutionMode`](../types.md#executionmode)`[]` | Yes | A collection specifying the [execution mode](../../concepts/delegation/index.md#execution-modes) for each corresponding delegation chain. |
+| `modes` | [`ExecutionMode`](../types.md#executionmode)`[]` | Yes | A collection specifying the [execution mode](../../concepts/delegation/delegation-manager.md#execution-modes) for each corresponding delegation chain. |
 | `executions` | [`ExecutionStruct`](../types.md#executionstruct)`[][]` | Yes | A nested collection where each inner collection contains a list of `ExecutionStruct` objects associated with a specific delegation chain. |
 
 ### Example
 
-This example assumes you have a delegation signed by the delegator.
+This example assumes you have a delegation signed by the <GlossaryTerm term="Delegator account">delegator</GlossaryTerm>.
 
 ```ts
 import { createExecution, ExecutionMode } from "@metamask/smart-accounts-kit";
@@ -582,7 +603,7 @@ Signs the delegation and returns the delegation signature.
 | `delegationManager` | `0x${string}` | Yes | The address of the Delegation Manager. |
 | `name` | `string` | No | The name of the domain of the Delegation Manager. The default is `DelegationManager`. |
 | `version` | `string` | No | The version of the domain of the Delegation Manager. The default is `1`. |
-| `allowInsecureUnrestrictedDelegation` | `boolean` | No | Whether to allow insecure unrestricted delegation with no caveats. The default is `false`. |
+| `allowInsecureUnrestrictedDelegation` | `boolean` | No | Whether to allow insecure unrestricted delegation with no <GlossaryTerm term="Caveat">caveats</GlossaryTerm>. The default is `false`. |
 
 ### Example
 

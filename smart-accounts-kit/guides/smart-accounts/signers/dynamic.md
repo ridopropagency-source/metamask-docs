@@ -4,13 +4,17 @@ sidebar_label: Dynamic
 keywords: [dynamic, smart account, signer, metamask smart account]
 ---
 
+import GlossaryTerm from '@theme/GlossaryTerm';
+
 # Use Dynamic with MetaMask Smart Accounts
 
 [Dynamic](https://www.dynamic.xyz/) is an embedded wallet solution that enables seamless social login and passkey based
-wallets, making user onboarding easier. MetaMask Smart Accounts is a signer agnostic implementation
-that allows you to use Dynamic's EOA wallet as a signer for MetaMask Smart Accounts.
+wallets, making user onboarding easier. MetaMask Smart Accounts is a signer-agnostic implementation
+that allows you to use Dynamic's EOA wallet as a signer for <GlossaryTerm term="MetaMask smart account">smart accounts</GlossaryTerm>.
 
-View the complete code for this guide at [gator-examples repository](https://github.com/MetaMask/gator-examples/tree/main/examples/smart-accounts/signers/dynamic).
+<!--
+View the complete code for this guide in the [`gator-examples`](https://github.com/MetaMask/gator-examples/tree/main/examples/smart-accounts/signers/dynamic) repository.
+-->
 
 :::info
 This guide supports React and React-based frameworks.
@@ -20,8 +24,8 @@ This guide supports React and React-based frameworks.
 
 - Install [Node.js](https://nodejs.org/en/blog/release/v18.18.0) v18 or later.
 - Install [Yarn](https://yarnpkg.com/),
-    [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), or another package manager
-- A [Dynamic Environment ID](https://www.dynamic.xyz/docs/developer-dashboard/tokens-api-keys#environment-id)
+    [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), or another package manager.
+- Create a [Dynamic Environment ID](https://www.dynamic.xyz/docs/developer-dashboard/tokens-api-keys#environment-id).
 
 ## Steps
 
@@ -42,7 +46,7 @@ connector enables you to use Wagmi hooks with Dynamic.
 Once you have created the `DynamicProvider`, you must wrap it at the root of your application so
 that the rest of your application has access to the Dynamic's context. 
 
-For the advance configuration, see how to [configure Dynamic & Wagmi](https://www.dynamic.xyz/docs/react-sdk/using-wagmi).
+For an advanced configuration, see how to [configure Dynamic and Wagmi](https://www.dynamic.xyz/docs/react-sdk/using-wagmi).
 
 <Tabs>
 <TabItem value = "provider.ts">
@@ -103,7 +107,7 @@ export const wagmiConfig = createConfig({
 ### 3. Create a smart account
 
 Once the user has connected their wallet, use the [Wallet Client](https://viem.sh/docs/clients/wallet) from Wagmi as the signer to create a
-MetaMask smart account.
+<GlossaryTerm term="MetaMask smart account" />.
 
 ```ts
 import { Implementation, toMetaMaskSmartAccount } from "@metamask/smart-accounts-kit";
