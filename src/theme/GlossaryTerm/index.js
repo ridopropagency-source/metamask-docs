@@ -86,6 +86,7 @@ export default function GlossaryTerm({
     const handleTouchOutside = (e) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         setShowTooltip(false);
+        setTooltipStyle(null);
       }
     };
     document.addEventListener('touchstart', handleTouchOutside);
@@ -119,8 +120,13 @@ export default function GlossaryTerm({
   const handleClick = (e) => {
     if (!isTouch) return;
     e.preventDefault();
-    setShowTooltip((prev) => !prev);
+    setShowTooltip((prev) => {
+      if (prev) setTooltipStyle(null);
+      return !prev;
+    });
   };
+
+  const tooltipPositioned = showTooltip && tooltipStyle != null;
 
   return (
     <span ref={wrapperRef} className={styles.glossaryTermWrapper}>
@@ -129,9 +135,9 @@ export default function GlossaryTerm({
         className={styles.glossaryTerm}
         onClick={handleClick}
         onMouseEnter={isTouch ? undefined : () => setShowTooltip(true)}
-        onMouseLeave={isTouch ? undefined : () => setShowTooltip(false)}
+        onMouseLeave={isTouch ? undefined : () => { setShowTooltip(false); setTooltipStyle(null); }}
         onFocus={isTouch ? undefined : () => setShowTooltip(true)}
-        onBlur={isTouch ? undefined : () => setShowTooltip(false)}
+        onBlur={isTouch ? undefined : () => { setShowTooltip(false); setTooltipStyle(null); }}
         aria-describedby={`tooltip-${termId}`}
       >
         {displayText}
@@ -140,10 +146,10 @@ export default function GlossaryTerm({
         <span
           ref={tooltipRef}
           id={`tooltip-${termId}`}
-          className={`${styles.tooltip} ${showTooltip ? styles.tooltipVisible : ''} ${styles.tooltipFloating}`}
+          className={`${styles.tooltip} ${tooltipPositioned ? styles.tooltipVisible : ''} ${styles.tooltipFloating}`}
           role="tooltip"
           style={
-            showTooltip && tooltipStyle
+            tooltipPositioned
               ? { top: `${tooltipStyle.top}px`, left: `${tooltipStyle.left}px` }
               : undefined
           }
