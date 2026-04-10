@@ -199,6 +199,11 @@ const sidebar = {
           items: ['reference/erc7710/bundler-client', 'reference/erc7710/wallet-client'],
         },
         'reference/types',
+        {
+          type: 'doc',
+          id: 'reference/glossary',
+          label: 'Glossary',
+        },
       ],
     },
     {

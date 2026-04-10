@@ -8,6 +8,7 @@ keywords:
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import GlossaryTerm from '@theme/GlossaryTerm';
 
 # Wallet Client actions reference
 
@@ -29,7 +30,7 @@ This function has the same parameters, and it also requires the following parame
 
 | Name                | Type                | Required | Description                                                                                                   |
 | ------------------- | ------------------- | -------- | ------------------------------------------------------------------------------------------------------------- |
-| `delegationManager` | `Address`           | Yes      | The address of the Delegation Manager.                                                                        |
+| `delegationManager` | `Address`           | Yes      | The address of the <GlossaryTerm term="Delegation Manager" />.                                                |
 | `permissionContext` | `PermissionContext` | Yes      | An encoded delegation chain (`Hex`) or a decoded delegation chain (`Delegation[]`) for redeeming delegations. |
 
 ### Example
